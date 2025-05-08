@@ -1,0 +1,275 @@
+@prefix res: <http://www.w3.org/2005/sparql-results#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+_:_ a res:ResultSet .
+_:_ res:resultVariable "influenced" , "name" .
+@prefix dbr:	<http://dbpedia.org/resource/> .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Quentin_Skinner ] ;
+      res:binding [ res:variable "name" ; res:value "Quentin Skinner"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/Robert_Morris_(artist)> ] ;
+      res:binding [ res:variable "name" ; res:value "Robert Morris"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Rudolf_Carnap ] ;
+      res:binding [ res:variable "name" ; res:value "Rudolf Carnap"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Sandra_Laugier ] ;
+      res:binding [ res:variable "name" ; res:value "Sandra Laugier"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Saul_Kripke ] ;
+      res:binding [ res:variable "name" ; res:value "Saul Kripke"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Eleanor_Rosch ] ;
+      res:binding [ res:variable "name" ; res:value "Eleanor Rosch"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Stephen_Mulhall ] ;
+      res:binding [ res:variable "name" ; res:value "Stephen Mulhall"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Bernard_Williams ] ;
+      res:binding [ res:variable "name" ; res:value "Sir Bernard Williams"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Bertrand_Russell ] ;
+      res:binding [ res:variable "name" ; res:value "The Earl Russell"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:David_Bloor ] ;
+      res:binding [ res:variable "name" ; res:value "David Bloor"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Alice_Ambrose ] ;
+      res:binding [ res:variable "name" ; res:value "Alice Ambrose"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:John_Searle ] ;
+      res:binding [ res:variable "name" ; res:value "John Rogers Searle"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Jon_Fosse ] ;
+      res:binding [ res:variable "name" ; res:value "Jon Fosse"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Jonathan_Lear ] ;
+      res:binding [ res:variable "name" ; res:value "Jonathan Lear"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Joseph_Kosuth ] ;
+      res:binding [ res:variable "name" ; res:value "Joseph Kosuth"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Jules_Vuillemin ] ;
+      res:binding [ res:variable "name" ; res:value "Jules Vuillemin"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Paul_Feyerabend ] ;
+      res:binding [ res:variable "name" ; res:value "Paul Feyerabend"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Peter_Hacker ] ;
+      res:binding [ res:variable "name" ; res:value "Peter Hacker"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Richard_Rorty ] ;
+      res:binding [ res:variable "name" ; res:value "Richard Rorty"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Robert_Brandom ] ;
+      res:binding [ res:variable "name" ; res:value "Robert Brandom"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Rahel_Jaeggi ] ;
+      res:binding [ res:variable "name" ; res:value "Rahel Jaeggi"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Constantine_Sandis ] ;
+      res:binding [ res:variable "name" ; res:value "Constantine Sandis"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Cora_Diamond ] ;
+      res:binding [ res:variable "name" ; res:value "Cora Diamond"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Crispin_Wright ] ;
+      res:binding [ res:variable "name" ; res:value "Crispin Wright"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Max_Black ] ;
+      res:binding [ res:variable "name" ; res:value "Max Black"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Mel_Bochner ] ;
+      res:binding [ res:variable "name" ; res:value "Mel Bochner"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Rupert_Read ] ;
+      res:binding [ res:variable "name" ; res:value "Rupert Read"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Rush_Rhees ] ;
+      res:binding [ res:variable "name" ; res:value "Rush Rhees"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Quill_Kukla ] ;
+      res:binding [ res:variable "name" ; res:value "Quill R. Kukla"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Elaine_Scarry ] ;
+      res:binding [ res:variable "name" ; res:value "Elaine Scarry"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/G._E._M._Anscombe> ] ;
+      res:binding [ res:variable "name" ; res:value "G. E. M. Anscombe"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Georg_Henrik_von_Wright ] ;
+      res:binding [ res:variable "name" ; res:value "Georg Henrik von Wright"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Giorgio_Agamben ] ;
+      res:binding [ res:variable "name" ; res:value "Giorgio Agamben"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Thomas_Pynchon ] ;
+      res:binding [ res:variable "name" ; res:value "Thomas Pynchon"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/Nancy_Bauer_(philosopher)> ] ;
+      res:binding [ res:variable "name" ; res:value "Nancy Bauer"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Simon_Glendinning ] ;
+      res:binding [ res:variable "name" ; res:value "Simon Glendinning"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Stanley_Cavell ] ;
+      res:binding [ res:variable "name" ; res:value "Stanley Cavell"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Stanley_Hauerwas ] ;
+      res:binding [ res:variable "name" ; res:value "Stanley Hauerwas"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Bruce_Nauman ] ;
+      res:binding [ res:variable "name" ; res:value "Bruce Nauman"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Timothy_Gowers ] ;
+      res:binding [ res:variable "name" ; res:value "Timothy Gowers"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Tristan_Garcia ] ;
+      res:binding [ res:variable "name" ; res:value "Tristan Garcia"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Wilfrid_Sellars ] ;
+      res:binding [ res:variable "name" ; res:value "Wilfrid Sellars"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Alan_Turing ] ;
+      res:binding [ res:variable "name" ; res:value "Alan Turing"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Alasdair_MacIntyre ] ;
+      res:binding [ res:variable "name" ; res:value "Alasdair MacIntyre"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Albrecht_Wellmer ] ;
+      res:binding [ res:variable "name" ; res:value ""@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Albrecht_Wellmer ] ;
+      res:binding [ res:variable "name" ; res:value "Albrecht Wellmer"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Daniel_Dennett ] ;
+      res:binding [ res:variable "name" ; res:value "Daniel Dennett"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Eduardo_Paolozzi ] ;
+      res:binding [ res:variable "name" ; res:value "Sir Eduardo Paolozzi"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Nikolas_Kompridis ] ;
+      res:binding [ res:variable "name" ; res:value "Nikolas Kompridis"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Noam_Chomsky ] ;
+      res:binding [ res:variable "name" ; res:value "Noam Chomsky"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Norman_Malcolm ] ;
+      res:binding [ res:variable "name" ; res:value "Norman Malcolm"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/P._F._Strawson> ] ;
+      res:binding [ res:variable "name" ; res:value "Peter Strawson"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Vincent_Descombes ] ;
+      res:binding [ res:variable "name" ; res:value "Vincent Descombes"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Warren_Goldfarb ] ;
+      res:binding [ res:variable "name" ; res:value "Warren D. Goldfarb"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/Richard_Moran_(philosopher)> ] ;
+      res:binding [ res:variable "name" ; res:value "Richard Moran"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Gwen_Harwood ] ;
+      res:binding [ res:variable "name" ; res:value "Gwen Harwood"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/H._L._A._Hart> ] ;
+      res:binding [ res:variable "name" ; res:value "H. L. A. Hart"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Hanna_Fenichel_Pitkin ] ;
+      res:binding [ res:variable "name" ; res:value "Hanna Fenichel Pitkin"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Iris_Murdoch ] ;
+      res:binding [ res:variable "name" ; res:value "Iris Murdoch"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Jacques_Bouveresse ] ;
+      res:binding [ res:variable "name" ; res:value "Jacques Bouveresse"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/James_F._Conant> ] ;
+      res:binding [ res:variable "name" ; res:value "James F. Conant"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/James_Tully_(philosopher)> ] ;
+      res:binding [ res:variable "name" ; res:value "James Tully"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Jasper_Johns ] ;
+      res:binding [ res:variable "name" ; res:value "Jasper Johns"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Talal_Asad ] ;
+      res:binding [ res:variable "name" ; res:value "Talal Asad"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Arthur_Danto ] ;
+      res:binding [ res:variable "name" ; res:value "Arthur Coleman Danto"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Chantal_Mouffe ] ;
+      res:binding [ res:variable "name" ; res:value "Chantal Mouffe"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/Charles_Taylor_(philosopher)> ] ;
+      res:binding [ res:variable "name" ; res:value "Charles Taylor"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:John_McDowell ] ;
+      res:binding [ res:variable "name" ; res:value "John McDowell"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/J\u00FCrgen_Habermas> ] ;
+      res:binding [ res:variable "name" ; res:value "J\u00FCrgen Habermas"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Stephen_Toulmin ] ;
+      res:binding [ res:variable "name" ; res:value "Stephen Edelston Toulmin"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/Donald_Davidson_(philosopher)> ] ;
+      res:binding [ res:variable "name" ; res:value "Donald Davidson"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Marjorie_Perloff ] ;
+      res:binding [ res:variable "name" ; res:value "Marjorie Perloff"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Philippa_Foot ] ;
+      res:binding [ res:variable "name" ; res:value "Philippa Foot"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Pierre_Bourdieu ] ;
+      res:binding [ res:variable "name" ; res:value "Pierre Bourdieu"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Pierre_Hadot ] ;
+      res:binding [ res:variable "name" ; res:value "Pierre Hadot"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Pierre_Klossowski ] ;
+      res:binding [ res:variable "name" ; res:value "Pierre Klossowski"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Ian_Hacking ] ;
+      res:binding [ res:variable "name" ; res:value "Ian Hacking"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Kojin_Karatani ] ;
+      res:binding [ res:variable "name" ; res:value "Kojin Karatani"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Michael_Dummett ] ;
+      res:binding [ res:variable "name" ; res:value "Michael Dummett"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/Michael_Williams_(philosopher)> ] ;
+      res:binding [ res:variable "name" ; res:value "Michael Williams"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Michel_de_Certeau ] ;
+      res:binding [ res:variable "name" ; res:value "Michel de Certeau"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Oets_Kolk_Bouwsma ] ;
+      res:binding [ res:variable "name" ; res:value "Oets Kolk Bouwsma"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Casimir_Lewy ] ;
+      res:binding [ res:variable "name" ; res:value "Casimir Lewy"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Ray_Monk ] ;
+      res:binding [ res:variable "name" ; res:value "Ray Monk"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Paul_Horwich ] ;
+      res:binding [ res:variable "name" ; res:value "Paul Horwich"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Gilbert_Ryle ] ;
+      res:binding [ res:variable "name" ; res:value "Gilbert Ryle"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Gilles-Gaston_Granger ] ;
+      res:binding [ res:variable "name" ; res:value "Gilles-Gaston Granger"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Naomi_Scheman ] ;
+      res:binding [ res:variable "name" ; res:value "Naomi Scheman"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value <http://dbpedia.org/resource/W._J._T._Mitchell> ] ;
+      res:binding [ res:variable "name" ; res:value "W. J. T. Mitchell"@en ] ] .
+_:_ res:solution [
+      res:binding [ res:variable "influenced" ; res:value dbr:Toril_Moi ] ;
+      res:binding [ res:variable "name" ; res:value "Toril Moi"@en ] ] .
