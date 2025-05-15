@@ -7,8 +7,7 @@
 @base <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/> .
 
 <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32> rdf:type owl:Ontology ;
-                                                                                     owl:imports <file:/Users/tommasopieretti/Desktop/extended_wittgenstein_ontology.ttl> ,
-                                                                                                 <file:/Users/tommasopieretti/Desktop/reconstructed_ontology.ttl> .
+                                                                                     owl:imports <file:/Users/tommasopieretti/Desktop/extended_wittgenstein_ontology.ttl> .
 
 #################################################################
 #    Annotation properties
@@ -21,13 +20,23 @@
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
 ###  http://example.org/ontology/authored
-<http://example.org/ontology/authored> rdfs:subPropertyOf owl:topObjectProperty ;
+<http://example.org/ontology/authored> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf owl:topObjectProperty ;
                                        owl:inverseOf :hasAuthor ;
-                                       rdfs:domain :Person ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ,
+                                                   :Person ;
                                        rdfs:range <http://example.org/ontology/Work> .
 
 
@@ -40,66 +49,44 @@
 
 
 ###  http://example.org/ontology/disagreesWith
-<http://example.org/ontology/disagreesWith> rdfs:subPropertyOf owl:topObjectProperty ;
-                                            rdf:type owl:SymmetricProperty .
+<http://example.org/ontology/disagreesWith> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:SymmetricProperty ;
+                                            rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                            rdfs:range <http://example.org/ontology/Philosopher> .
 
 
 ###  http://example.org/ontology/hasInfluenced
-<http://example.org/ontology/hasInfluenced> rdfs:subPropertyOf owl:topObjectProperty ;
+<http://example.org/ontology/hasInfluenced> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
                                             owl:inverseOf :WasInfluencedBy ;
+                                            rdf:type owl:TransitiveProperty ;
                                             rdfs:domain owl:Thing ;
                                             rdfs:range owl:Thing .
 
 
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#BelongsToSchool
+###  http://example.org/ontology/hasTheme
+<http://example.org/ontology/hasTheme> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/ontology/Work> ;
+                                       rdfs:range <http://example.org/ontology/Theme> .
+
+
+###  http://example.org/ontology/rejects
+<http://example.org/ontology/rejects> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                      rdfs:range <http://example.org/ontology/Concept> .
+
+
+###  http://example.org/ontology/supports
+<http://example.org/ontology/supports> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                       rdfs:range <http://example.org/ontology/Concept> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/BelongsToSchool
 :BelongsToSchool rdf:type owl:ObjectProperty ;
                  rdfs:domain <http://example.org/ontology/Philosopher> ;
                  rdfs:range :SchoolOfThought .
-
-
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#PhilosopherInfluencedWork
-:PhilosopherInfluencedWork rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
-                           owl:inverseOf :WorkWasInfluencedByPhilosopher ;
-                           rdfs:domain <http://example.org/ontology/Philosopher> ;
-                           rdfs:range <http://example.org/ontology/Work> .
-
-
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#PhilosopherInlfuencedPhilosopher
-:PhilosopherInlfuencedPhilosopher rdf:type owl:ObjectProperty ;
-                                  rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
-                                  owl:inverseOf :PhilosopherWasInfluencedByPhilosopher ;
-                                  rdfs:domain <http://example.org/ontology/Philosopher> ;
-                                  rdfs:range <http://example.org/ontology/Philosopher> .
-
-
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#PhilosopherWasInfluencedByPhilosopher
-:PhilosopherWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
-                                       rdfs:subPropertyOf :WasInfluencedBy ;
-                                       rdfs:domain <http://example.org/ontology/Philosopher> ;
-                                       rdfs:range <http://example.org/ontology/Philosopher> .
-
-
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#PhilosopherWasInfluencedByWork
-:PhilosopherWasInfluencedByWork rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf :WasInfluencedBy ;
-                                owl:inverseOf :WorkInfluencedPhilosopher ;
-                                rdfs:domain <http://example.org/ontology/Philosopher> ;
-                                rdfs:range <http://example.org/ontology/Work> .
-
-
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#WorkInfluencedPhilosopher
-:WorkInfluencedPhilosopher rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
-                           rdfs:domain <http://example.org/ontology/Work> ;
-                           rdfs:range <http://example.org/ontology/Philosopher> .
-
-
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#WorkWasInfluencedByPhilosopher
-:WorkWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf :WasInfluencedBy ;
-                                rdfs:domain <http://example.org/ontology/Work> ;
-                                rdfs:range <http://example.org/ontology/Philosopher> .
 
 
 ###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/CriticallyInfluencedBy
@@ -111,6 +98,37 @@
                         rdfs:domain <http://example.org/ontology/Work> ,
                                     :Person ,
                                     :SchoolOfThought .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherInfluencedWork
+:PhilosopherInfluencedWork rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                           owl:inverseOf :WorkWasInfluencedByPhilosopher ;
+                           rdfs:domain <http://example.org/ontology/Philosopher> ;
+                           rdfs:range <http://example.org/ontology/Work> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherInlfuencedPhilosopher
+:PhilosopherInlfuencedPhilosopher rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                                  owl:inverseOf :PhilosopherWasInfluencedByPhilosopher ;
+                                  rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                  rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherWasInfluencedByPhilosopher
+:PhilosopherWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf :WasInfluencedBy ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                       rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherWasInfluencedByWork
+:PhilosopherWasInfluencedByWork rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :WasInfluencedBy ;
+                                owl:inverseOf :WorkInfluencedPhilosopher ;
+                                rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                rdfs:range <http://example.org/ontology/Work> .
 
 
 ###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PositivelyInfluencedBy
@@ -130,6 +148,20 @@
                  rdf:type owl:TransitiveProperty ;
                  rdfs:domain owl:Thing ;
                  rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/WorkInfluencedPhilosopher
+:WorkInfluencedPhilosopher rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                           rdfs:domain <http://example.org/ontology/Work> ;
+                           rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/WorkWasInfluencedByPhilosopher
+:WorkWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :WasInfluencedBy ;
+                                rdfs:domain <http://example.org/ontology/Work> ;
+                                rdfs:range <http://example.org/ontology/Philosopher> .
 
 
 ###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/hasAuthor
@@ -158,28 +190,67 @@
 #################################################################
 
 ###  http://example.org/ontology/birthDate
-<http://example.org/ontology/birthDate> rdfs:range xsd:dateTime .
+<http://example.org/ontology/birthDate> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain :Person ;
+                                        rdfs:range xsd:date ,
+                                                   xsd:integer .
 
 
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Nationality
+###  http://example.org/ontology/conceptLabel
+<http://example.org/ontology/conceptLabel> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <http://example.org/ontology/Concept> ;
+                                           rdfs:range xsd:string .
+
+
+###  http://example.org/ontology/deathDate
+<http://example.org/ontology/deathDate> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain :Person ;
+                                        rdfs:range xsd:date ,
+                                                   xsd:integer .
+
+
+###  http://example.org/ontology/influenceJustification
+<http://example.org/ontology/influenceJustification> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain owl:Thing ;
+                                                     rdfs:range xsd:string .
+
+
+###  http://example.org/ontology/themeLabel
+<http://example.org/ontology/themeLabel> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/ontology/Theme> ;
+                                         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#birthPlace
+:birthPlace rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/Nationality
 :Nationality rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Person ;
              rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#YearOfPublication
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/YearOfPublication
 :YearOfPublication rdf:type owl:DatatypeProperty ;
+                   rdfs:domain <http://example.org/ontology/Work> ;
                    rdfs:range xsd:date ,
-                              xsd:int ,
-                              xsd:integer ,
-                              xsd:nonNegativeInteger .
+                              xsd:integer .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://example.org/ontology/Concept
+<http://example.org/ontology/Concept> rdf:type owl:Class .
+
+
 ###  http://example.org/ontology/Disagreement
-<http://example.org/ontology/Disagreement> rdfs:subClassOf <http://example.org/ontology/Concept> .
+<http://example.org/ontology/Disagreement> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://example.org/ontology/Concept> .
 
 
 ###  http://example.org/ontology/InfluenceEvent
@@ -188,12 +259,18 @@
 
 
 ###  http://example.org/ontology/Philosopher
-<http://example.org/ontology/Philosopher> rdfs:subClassOf :Person ,
+<http://example.org/ontology/Philosopher> rdf:type owl:Class ;
+                                          rdfs:subClassOf :Person ,
                                                           :SchoolOfThought .
 
 
+###  http://example.org/ontology/Theme
+<http://example.org/ontology/Theme> rdf:type owl:Class .
+
+
 ###  http://example.org/ontology/Work
-<http://example.org/ontology/Work> owl:disjointWith :Person .
+<http://example.org/ontology/Work> rdf:type owl:Class ;
+                                   owl:disjointWith :Person .
 
 
 ###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/Person
@@ -208,8 +285,9 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#ElizabethAnscombe
-:ElizabethAnscombe rdf:type owl:NamedIndividual ;
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/ElizabethAnscombe
+:ElizabethAnscombe rdf:type owl:NamedIndividual ,
+                            <http://example.org/ontology/Philosopher> ;
                    <http://example.org/ontology/birthDate> 1919 ;
                    <http://example.org/ontology/deathDate> 2001 .
 
