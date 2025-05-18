@@ -138,7 +138,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain
-<http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> rdf:type owl:ObjectProperty .
+<http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> rdf:type owl:ObjectProperty ;
+                                                            rdfs:range <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType
@@ -167,7 +168,13 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#wasInfluencedBy
-<http://www.co-ode.org/ontologies/ont.owl#wasInfluencedBy> rdf:type owl:ObjectProperty .
+<http://www.co-ode.org/ontologies/ont.owl#wasInfluencedBy> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://example.org/influence#Philosopher> ,
+                                                                       <http://example.org/influence#PhilosophicalSchool> ,
+                                                                       <http://example.org/ontology/Work> ;
+                                                           rdfs:range <http://example.org/influence#Philosopher> ,
+                                                                      <http://example.org/ontology/Work> ,
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> .
 
 
 #################################################################
@@ -226,12 +233,10 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                    rdfs:range xsd:gYear .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain
-<http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> rdf:type owl:DatatypeProperty .
-
-
 ###  http://www.co-ode.org/ontologies/ont.owl#hasIntensity
-<http://www.co-ode.org/ontologies/ont.owl#hasIntensity> rdf:type owl:DatatypeProperty .
+<http://www.co-ode.org/ontologies/ont.owl#hasIntensity> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://example.org/influence#Influence> ;
+                                                        rdfs:range xsd:string .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#hasSource
@@ -286,8 +291,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 <http://example.org/ontology/Work> rdf:type owl:Class .
 
 
-###  http://www.co-ode.org/ontologies/ont.owl#ConceptDomainInfluence
-<http://www.co-ode.org/ontologies/ont.owl#ConceptDomainInfluence> rdf:type owl:Class .
+###  http://www.co-ode.org/ontologies/ont.owl#ConceptDomain
+<http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> rdf:type owl:Class .
 
 
 ###  http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought
@@ -661,12 +666,19 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://example.org/ontology/influenceOnAnscombe
 <http://example.org/ontology/influenceOnAnscombe> rdf:type owl:NamedIndividual ,
                                                            <http://example.org/ontology/InfluenceRelationship> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :Ethics ,
+                                                                                                              :PhilosophyOfAction ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/EditorialTransmission> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Elizabeth_Anscombe> ;
+                                                  <http://example.org/influence#birthYear> "1944"^^xsd:gYear ;
+                                                  <http://example.org/influence#deathYear> "2001"^^xsd:gYear ;
+                                                  <http://example.org/influence#influenceExplanation> "Anscombe, a direct student and literary executor of Wittgenstein, extended his philosophy of action and applied his methodology to ethics. She translated and edited key works by Wittgenstein, ensuring their faithful transmission. In her book Intention (1957), she developed a philosophy of action that applies Wittgenstein’s critique of Cartesian mentalism." ;
+                                                  <http://example.org/influence#influenceIntensity> "Strong" ;
                                                   <http://example.org/ontology/beginningYear> "1944"^^xsd:gYear ;
                                                   <http://example.org/ontology/endYear> "2001"^^xsd:gYear ;
                                                   <http://example.org/ontology/hasConceptDomain> "Philosophy of Action / Ethics" ;
                                                   <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/EditorialTransmission> ;
                                                   <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Elizabeth_Anscombe> ;
-                                                  <http://example.org/ontology/hasSource> <http://example.org/ontology/Wittgenstein> ;
                                                   <http://example.org/ontology/influenceDescription> "Anscombe, a direct student and literary executor of Wittgenstein, extended his philosophy of action and applied his methodology to ethics. She translated and edited key works by Wittgenstein, ensuring their faithful transmission. In her book Intention (1957), she developed a philosophy of action that applies Wittgenstein’s critique of Cartesian mentalism." ;
                                                   <http://example.org/ontology/influenceIntensity> "strong" .
 
@@ -674,12 +686,18 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://example.org/ontology/influenceOnAustin
 <http://example.org/ontology/influenceOnAustin> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/ontology/InfluenceRelationship> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :PhilosophyOfLanguage ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/ThematicAdoption> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/John_Langshaw_Austin> ;
+                                                <http://example.org/influence#influenceExplanation> "Although he developed an independent path, Austin shared with Wittgenstein a focus on ordinary language and the multiplicity of linguistic functions. His theory of speech acts, developed in How to Do Things with Words (1962), extends Wittgenstein’s insight that language is not only used to describe, but also to perform actions." ;
+                                                <http://example.org/influence#influenceIntensity> "Moderate" ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1940"^^xsd:gYear ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#endYear> "1960"^^xsd:gYear ;
                                                 <http://example.org/ontology/beginningYear> "1940"^^xsd:gYear ;
                                                 <http://example.org/ontology/endYear> "1960"^^xsd:gYear ;
                                                 <http://example.org/ontology/hasConceptDomain> "Philosophy of Language" ;
                                                 <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/ThematicAdoption> ;
                                                 <http://example.org/ontology/hasRecipient> <http://example.org/ontology/John_Langshaw_Austin> ;
-                                                <http://example.org/ontology/hasSource> <http://example.org/ontology/Wittgenstein> ;
                                                 <http://example.org/ontology/influenceDescription> "Although he developed an independent path, Austin shared with Wittgenstein a focus on ordinary language and the multiplicity of linguistic functions. His theory of speech acts, developed in How to Do Things with Words (1962), extends Wittgenstein’s insight that language is not only used to describe, but also to perform actions." ;
                                                 <http://example.org/ontology/influenceIntensity> "moderate" .
 
@@ -687,12 +705,20 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://example.org/ontology/influenceOnCavell
 <http://example.org/ontology/influenceOnCavell> rdf:type owl:NamedIndividual ,
                                                          <http://example.org/ontology/InfluenceRelationship> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :Aesthetics ,
+                                                                                                            :Epistemology ,
+                                                                                                            :OrdinaryLanguagePhilosophy ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/ContextualReinterpretation> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Stanley_Cavell> ;
+                                                <http://example.org/influence#influenceExplanation> "Cavell reinterpreted Wittgenstein within American cultural contexts, linking his ideas to skepticism, aesthetics, and popular culture. In his book The Claim of Reason (1979), he uses Wittgensteinian concepts such as “forms of life” to explore the relationship between ordinary language and philosophical skepticism, extending the analysis to film and literature." ;
+                                                <http://example.org/influence#influenceIntensity> "Strong" ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1962"^^xsd:gYear ,
+                                                                                                         "2018"^^xsd:gYear ;
                                                 <http://example.org/ontology/beginningYear> "1962"^^xsd:gYear ;
                                                 <http://example.org/ontology/endYear> "2018"^^xsd:gYear ;
                                                 <http://example.org/ontology/hasConceptDomain> "Epistemology / Aesthetics / Ordinary Language Philosophy" ;
                                                 <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/ContextualReinterpretation> ;
                                                 <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Stanley_Cavell> ;
-                                                <http://example.org/ontology/hasSource> <http://example.org/ontology/Wittgenstein> ;
                                                 <http://example.org/ontology/influenceDescription> "Cavell reinterpreted Wittgenstein within American cultural contexts, linking his ideas to skepticism, aesthetics, and popular culture. In his book The Claim of Reason (1979), he uses Wittgensteinian concepts such as “forms of life” to explore the relationship between ordinary language and philosophical skepticism, extending the analysis to film and literature." ;
                                                 <http://example.org/ontology/influenceIntensity> "strong" .
 
@@ -799,6 +825,36 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein
 <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> rdf:type owl:NamedIndividual ,
                                                                         <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#Aesthetics
+:Aesthetics rdf:type owl:NamedIndividual ,
+                     <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#Epistemology
+:Epistemology rdf:type owl:NamedIndividual ,
+                       <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#Ethics
+:Ethics rdf:type owl:NamedIndividual ,
+                 <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#OrdinaryLanguagePhilosophy
+:OrdinaryLanguagePhilosophy rdf:type owl:NamedIndividual ,
+                                     <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#PhilosophyOfAction
+:PhilosophyOfAction rdf:type owl:NamedIndividual ,
+                             <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#PhilosophyOfLanguage
+:PhilosophyOfLanguage rdf:type owl:NamedIndividual ,
+                               <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
