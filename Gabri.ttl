@@ -1,0 +1,733 @@
+@prefix : <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/> .
+
+<http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32> rdf:type owl:Ontology ;
+                                                                                     owl:imports <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/ontology/rejectsConcept
+<http://example.org/ontology/rejectsConcept> rdf:type owl:AnnotationProperty ;
+                                             rdfs:domain <http://example.org/ontology/Work> ,
+                                                         :Person .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#xsd:gYear
+:xsd:gYear rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/ontology/authored
+<http://example.org/ontology/authored> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                       owl:inverseOf :hasAuthor ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ,
+                                                   :Person ;
+                                       rdfs:range <http://example.org/ontology/Work> .
+
+
+###  http://example.org/ontology/dealsWithTheme
+<http://example.org/ontology/dealsWithTheme> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <http://example.org/ontology/Philosopher> ,
+                                                         <http://example.org/ontology/Work> ,
+                                                         :SchoolOfThought ;
+                                             rdfs:range <http://example.org/ontology/Theme> .
+
+
+###  http://example.org/ontology/disagreesWith
+<http://example.org/ontology/disagreesWith> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:SymmetricProperty ;
+                                            rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                            rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://example.org/ontology/hasInfluenced
+<http://example.org/ontology/hasInfluenced> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            owl:inverseOf :isInfluencedBy ;
+                                            rdf:type owl:TransitiveProperty ;
+                                            rdfs:domain owl:Thing ;
+                                            rdfs:range owl:Thing .
+
+
+###  http://example.org/ontology/hasTheme
+<http://example.org/ontology/hasTheme> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/ontology/Work> ;
+                                       rdfs:range <http://example.org/ontology/Theme> .
+
+
+###  http://example.org/ontology/rejects
+<http://example.org/ontology/rejects> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                      rdfs:range <http://example.org/ontology/Concept> .
+
+
+###  http://example.org/ontology/supports
+<http://example.org/ontology/supports> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                       rdfs:range <http://example.org/ontology/Concept> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/BelongsToSchool
+:BelongsToSchool rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://example.org/ontology/Philosopher> ;
+                 rdfs:range :SchoolOfThought .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/CriticallyInfluencedBy
+:CriticallyInfluencedBy rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :PhilosopherWasInfluencedByPhilosopher ,
+                                           :PhilosopherWasInfluencedByWork ,
+                                           :WorkWasInfluencedByPhilosopher ;
+                        owl:inverseOf :hasNegativelyInfluenced ;
+                        rdfs:domain <http://example.org/ontology/Work> ,
+                                    :Person ,
+                                    :SchoolOfThought .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherInfluencedWork
+:PhilosopherInfluencedWork rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                           owl:inverseOf :WorkWasInfluencedByPhilosopher ;
+                           rdfs:domain <http://example.org/ontology/Philosopher> ;
+                           rdfs:range <http://example.org/ontology/Work> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherInlfuencedPhilosopher
+:PhilosopherInlfuencedPhilosopher rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                                  owl:inverseOf :PhilosopherWasInfluencedByPhilosopher ;
+                                  rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                  rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherWasInfluencedByPhilosopher
+:PhilosopherWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf :isInfluencedBy ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                       rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PhilosopherWasInfluencedByWork
+:PhilosopherWasInfluencedByWork rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :isInfluencedBy ;
+                                owl:inverseOf :WorkInfluencedPhilosopher ;
+                                rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                rdfs:range <http://example.org/ontology/Work> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/PositivelyInfluencedBy
+:PositivelyInfluencedBy rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :PhilosopherWasInfluencedByPhilosopher ,
+                                           :PhilosopherWasInfluencedByWork ,
+                                           :WorkWasInfluencedByPhilosopher ;
+                        owl:inverseOf :hasPositivelyInfluenced ;
+                        rdfs:domain <http://example.org/ontology/Work> ,
+                                    :Person ,
+                                    :SchoolOfThought .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/WorkInfluencedPhilosopher
+:WorkInfluencedPhilosopher rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                           rdfs:domain <http://example.org/ontology/Work> ;
+                           rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/WorkWasInfluencedByPhilosopher
+:WorkWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :isInfluencedBy ;
+                                rdfs:domain <http://example.org/ontology/Work> ;
+                                rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain <http://example.org/ontology/Work> ;
+           rdfs:range :Person .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/hasNegativelyInfluenced
+:hasNegativelyInfluenced rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :PhilosopherInfluencedWork ,
+                                            :PhilosopherInlfuencedPhilosopher ,
+                                            :WorkInfluencedPhilosopher .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/hasPositivelyInfluenced
+:hasPositivelyInfluenced rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :PhilosopherInfluencedWork ,
+                                            :PhilosopherInlfuencedPhilosopher ,
+                                            :WorkInfluencedPhilosopher .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/isInfluencedBy
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:TransitiveProperty ;
+                rdfs:domain <http://example.org/ontology/Philosopher> ;
+                rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/ontology/conceptLabel
+<http://example.org/ontology/conceptLabel> rdf:type owl:DatatypeProperty ;
+                                           rdfs:domain <http://example.org/ontology/Concept> ;
+                                           rdfs:range xsd:string .
+
+
+###  http://example.org/ontology/dateOfBirth
+<http://example.org/ontology/dateOfBirth> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain :Person ;
+                                          rdfs:range xsd:date .
+
+
+###  http://example.org/ontology/dateOfDeath
+<http://example.org/ontology/dateOfDeath> rdf:type owl:DatatypeProperty ;
+                                          rdfs:domain :Person ;
+                                          rdfs:range xsd:date .
+
+
+###  http://example.org/ontology/influenceJustification
+<http://example.org/ontology/influenceJustification> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain owl:Thing ;
+                                                     rdfs:range xsd:string .
+
+
+###  http://example.org/ontology/themeLabel
+<http://example.org/ontology/themeLabel> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/ontology/Theme> ;
+                                         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#hasSurname
+:hasSurname rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#influenceIntensity
+:influenceIntensity rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#placeOfDeath
+:placeOfDeath rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/Nationality
+:Nationality rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Person ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/placeOfBirth
+:placeOfBirth rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Person ;
+              rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/yearOfPublication
+:yearOfPublication rdf:type owl:DatatypeProperty ;
+                   rdfs:domain <http://example.org/ontology/Work> ;
+                   rdfs:range xsd:date ,
+                              xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/ontology/Concept
+<http://example.org/ontology/Concept> rdf:type owl:Class .
+
+
+###  http://example.org/ontology/Disagreement
+<http://example.org/ontology/Disagreement> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://example.org/ontology/Concept> .
+
+
+###  http://example.org/ontology/InfluenceEvent
+<http://example.org/ontology/InfluenceEvent> rdf:type owl:Class ;
+                                             rdfs:subClassOf :Influence .
+
+
+###  http://example.org/ontology/Philosopher
+<http://example.org/ontology/Philosopher> rdf:type owl:Class .
+
+
+###  http://example.org/ontology/Theme
+<http://example.org/ontology/Theme> rdf:type owl:Class .
+
+
+###  http://example.org/ontology/Work
+<http://example.org/ontology/Work> rdf:type owl:Class ;
+                                   owl:disjointWith :Person .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#AssociativeInfluence
+:AssociativeInfluence rdf:type owl:Class ;
+                      rdfs:subClassOf :CausalMode .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#CausalInfluence
+:CausalInfluence rdf:type owl:Class ;
+                 rdfs:subClassOf :CausalMode .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#CausalMode
+:CausalMode rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#ConceptualInlfuence
+:ConceptualInlfuence rdf:type owl:Class ;
+                     rdfs:subClassOf :TypeOfInfleunce .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#ConstructiveInfluence
+:ConstructiveInfluence rdf:type owl:Class ;
+                       rdfs:subClassOf :CausalMode .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#DialogicalInfluence
+:DialogicalInfluence rdf:type owl:Class ;
+                     rdfs:subClassOf :CausalMode .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Influence
+:Influence rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#MethodologicalInfluence
+:MethodologicalInfluence rdf:type owl:Class ;
+                         rdfs:subClassOf :TypeOfInfleunce .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#OppositionalInfluence
+:OppositionalInfluence rdf:type owl:Class ;
+                       rdfs:subClassOf :CausalMode .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#StylisticInfluence
+:StylisticInfluence rdf:type owl:Class ;
+                    rdfs:subClassOf :TypeOfInfleunce .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#ThematicInfluence
+:ThematicInfluence rdf:type owl:Class ;
+                   rdfs:subClassOf :TypeOfInfleunce .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#TypeOfInfleunce
+:TypeOfInfleunce rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/SchoolOfThought
+:SchoolOfThought rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#A_Defense_Of_Common_Sense
+:A_Defense_Of_Common_Sense rdf:type owl:NamedIndividual ,
+                                    <http://example.org/ontology/Work> ;
+                           :hasAuthor :George_Edward_Moore ;
+                           :yearOfPublication "1925"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#A_Treatise_Of_Human_Nature
+:A_Treatise_Of_Human_Nature rdf:type owl:NamedIndividual ,
+                                     <http://example.org/ontology/Work> ;
+                            :hasAuthor :David_Hume ;
+                            :yearOfPublication "1739"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Agostino
+:Agostino rdf:type owl:NamedIndividual ,
+                   <http://example.org/ontology/Philosopher> ;
+          <http://example.org/ontology/dateOfBirth> "13/11/0354"^^xsd:date ;
+          <http://example.org/ontology/dateOfDeath> "23/08/0430"^^xsd:date ;
+          :hasSurname "d'Ippona" ;
+          :placeOfDeath "Hippo, Numidia (now Annaba, Algeria)" ;
+          :Nationality "Roman" ;
+          :placeOfBirth "Tagaste, Numidia (nowAlgeria)" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Arthur_Schopenhauer
+:Arthur_Schopenhauer rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Philosopher> ;
+                     <http://example.org/ontology/dateOfBirth> "22/02/1788"^^xsd:date ;
+                     <http://example.org/ontology/dateOfDeath> "21/09/1860"^^xsd:date ;
+                     :placeOfDeath "Frankfurt" ;
+                     :Nationality "German" ;
+                     :placeOfBirth "Danzig" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Begriffsschrift
+:Begriffsschrift rdf:type owl:NamedIndividual ,
+                          <http://example.org/ontology/Work> ;
+                 :hasAuthor :Gottlob_Frege ;
+                 :yearOfPublication "1879"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Being_And_Time
+:Being_And_Time rdf:type owl:NamedIndividual ,
+                         <http://example.org/ontology/Work> ;
+                :hasAuthor :Martin_Heidegger ;
+                :yearOfPublication "1927"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Bertrand_Russell
+:Bertrand_Russell rdf:type owl:NamedIndividual ,
+                           <http://example.org/ontology/Philosopher> ;
+                  <http://example.org/ontology/dateOfBirth> "18/05/1872"^^xsd:date ;
+                  <http://example.org/ontology/dateOfDeath> "02/02/1970"^^xsd:date ;
+                  :placeOfDeath "Penrhyndeudraeth, Wales" ;
+                  :Nationality "British" ;
+                  :placeOfBirth "Trellech, Wales" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Confessions
+:Confessions rdf:type owl:NamedIndividual ,
+                      <http://example.org/ontology/Work> ;
+             :hasAuthor :Agostino ;
+             :yearOfPublication "400"^^:xsd:gYear ;
+             rdfs:comment "Here we used yearOfPublication even tho the book wasn't really published as it was not a common thing to do back at that time." .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Cora_Diamond
+:Cora_Diamond rdf:type owl:NamedIndividual ,
+                       <http://example.org/ontology/Philosopher> ;
+              <http://example.org/ontology/dateOfBirth> "30/10/1937"^^xsd:date ;
+              :Nationality "American" ;
+              :placeOfBirth "New York, Usa" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#David_Hume
+:David_Hume rdf:type owl:NamedIndividual ,
+                     <http://example.org/ontology/Philosopher> ;
+            <http://example.org/ontology/dateOfBirth> "07/05/1711"^^xsd:date ;
+            <http://example.org/ontology/dateOfDeath> "25/08/1776"^^xsd:date ;
+            :placeOfDeath "Edinburgh, Scotland" ;
+            :Nationality "Scottish" ;
+            :placeOfBirth "Edinburgh, Scotland" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Friedrich_Nietzsche
+:Friedrich_Nietzsche rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Philosopher> ;
+                     <http://example.org/ontology/dateOfBirth> "15/10/1844"^^xsd:date ;
+                     <http://example.org/ontology/dateOfDeath> "25/08/1900"^^xsd:date ;
+                     :placeOfDeath "Weimar, Germany" ;
+                     :Nationality "German" ;
+                     :placeOfBirth "Röcken, Prussia (now Germany)" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#George_Edward_Moore
+:George_Edward_Moore rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Philosopher> ;
+                     <http://example.org/ontology/dateOfBirth> "04/11/1873"^^xsd:date ;
+                     <http://example.org/ontology/dateOfDeath> "24/10/1958"^^xsd:date ;
+                     :placeOfDeath "Cambridge, England" ;
+                     :Nationality "British" ;
+                     :placeOfBirth "London, England" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Gilbert_Ryle
+:Gilbert_Ryle rdf:type owl:NamedIndividual ,
+                       <http://example.org/ontology/Philosopher> ;
+              <http://example.org/ontology/dateOfBirth> "19/08/1900"^^xsd:date ;
+              <http://example.org/ontology/dateOfDeath> "06/10/1976"^^xsd:date ;
+              :placeOfDeath "Withby, England" ;
+              :Nationality "British"^^xsd:date ;
+              :placeOfBirth "Brighton, England" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Gottlob_Frege
+:Gottlob_Frege rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/dateOfBirth> "08/11/1848"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "26/07/1925"^^xsd:date ;
+               :placeOfDeath "Bad Kleinen, Germany" ;
+               :Nationality "German" ;
+               :placeOfBirth "Wismar, Germany" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#How_To_Do_Things_With_Words
+:How_To_Do_Things_With_Words rdf:type owl:NamedIndividual ,
+                                      <http://example.org/ontology/Work> ;
+                             :hasAuthor :John_Langshaw_Austin ;
+                             :yearOfPublication "1962"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Immanuel_Kant
+:Immanuel_Kant rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/dateOfBirth> "22/04/1724"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "12/02/1804"^^xsd:date ;
+               :placeOfDeath "Königsberg, Prussia (now Kaliningrad, Russia)" ;
+               :Nationality "Prussian" ;
+               :placeOfBirth "Königsberg, Prussia (now Kaliningrad, Russia)" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Intention
+:Intention rdf:type owl:NamedIndividual ,
+                    <http://example.org/ontology/Work> ;
+           :hasAuthor :Elizabeth_Anscombe ;
+           :yearOfPublication "1957"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#John_Langshaw_Austin
+:John_Langshaw_Austin rdf:type owl:NamedIndividual ,
+                               <http://example.org/ontology/Philosopher> ;
+                      <http://example.org/ontology/dateOfBirth> "26/03/1911"^^xsd:date ;
+                      <http://example.org/ontology/dateOfDeath> "08/02/1960"^^xsd:date ;
+                      :placeOfDeath "Oxford, England" ;
+                      :Nationality "British" ;
+                      :placeOfBirth "Lancaster, England" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#John_McDowell
+:John_McDowell rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/dateOfBirth> "07/03/1942"^^xsd:date ;
+               :Nationality "South African" ;
+               :placeOfBirth "Boksburg, South Africa" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Jürgen_Habermas
+:Jürgen_Habermas rdf:type owl:NamedIndividual ,
+                          <http://example.org/ontology/Philosopher> ;
+                 <http://example.org/ontology/dateOfBirth> "18/06/1929"^^xsd:date ;
+                 :Nationality "German" ;
+                 :placeOfBirth "Düsseldorf, Germany" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Ludwig_Wittgestein
+:Ludwig_Wittgestein rdf:type owl:NamedIndividual ,
+                             <http://example.org/ontology/Philosopher> ;
+                    <http://example.org/ontology/dateOfBirth> "26/04/1889"^^xsd:date ;
+                    <http://example.org/ontology/dateOfDeath> "29/04/1951"^^xsd:date ;
+                    :placeOfDeath "Cambridge, England" ;
+                    :Nationality "Austrian (later British citizen)" ;
+                    :placeOfBirth "Vienna, Austria" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Martin_Heidegger
+:Martin_Heidegger rdf:type owl:NamedIndividual ,
+                           <http://example.org/ontology/Philosopher> ;
+                  <http://example.org/ontology/dateOfBirth> "26/09/1889"^^xsd:date ;
+                  <http://example.org/ontology/dateOfDeath> "26/05/1976"^^xsd:date ;
+                  :placeOfDeath "Freiburg im Breisgau, Germany" ;
+                  :Nationality "German" ;
+                  :placeOfBirth "Messkirch, Germany" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Mind_And_World
+:Mind_And_World rdf:type owl:NamedIndividual ,
+                         <http://example.org/ontology/Work> ;
+                :hasAuthor :John_McDowell ;
+                :yearOfPublication "1994"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Peter_Winch
+:Peter_Winch rdf:type owl:NamedIndividual ,
+                      <http://example.org/ontology/Philosopher> ;
+             <http://example.org/ontology/dateOfBirth> "14/01/1926"^^xsd:date ;
+             <http://example.org/ontology/dateOfDeath> "27/04/1997"^^xsd:date ;
+             :placeOfDeath "Champaign, Illinois, USA" ;
+             :Nationality "British" ;
+             :placeOfBirth "London, England" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Philosophy_And_The_Mirror_Of_Nature
+:Philosophy_And_The_Mirror_Of_Nature rdf:type owl:NamedIndividual ,
+                                              <http://example.org/ontology/Work> ;
+                                     :hasAuthor :Richard_Rorty ;
+                                     :yearOfPublication "1979"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Pragmatism_A_New_Name_For_Some_Old_Ways_Of_Thinking
+:Pragmatism_A_New_Name_For_Some_Old_Ways_Of_Thinking rdf:type owl:NamedIndividual ,
+                                                              <http://example.org/ontology/Work> ;
+                                                     :hasAuthor :William_James ;
+                                                     :yearOfPublication "1907"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Principia_Mathematica
+:Principia_Mathematica rdf:type owl:NamedIndividual ,
+                                <http://example.org/ontology/Work> ;
+                       :hasAuthor :Bertrand_Russell .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Richard_Rorty
+:Richard_Rorty rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/dateOfBirth> "04/10/1931"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "08/06/2007"^^xsd:date ;
+               :placeOfDeath "Palo Alto, California, USA" ;
+               :Nationality "American" ;
+               :placeOfBirth "New York, New York, USA" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Saul_Kripke
+:Saul_Kripke rdf:type owl:NamedIndividual ,
+                      <http://example.org/ontology/Philosopher> ;
+             <http://example.org/ontology/dateOfBirth> "13/11/1940"^^xsd:date ;
+             <http://example.org/ontology/dateOfDeath> "15/09/2022"^^xsd:date ;
+             :placeOfDeath "Plainsboro, New Jersey, USA" ;
+             :Nationality "American" ;
+             :placeOfBirth "Bay Shore, New York, USA" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Stanley_Cavell
+:Stanley_Cavell rdf:type owl:NamedIndividual ,
+                         <http://example.org/ontology/Philosopher> ;
+                <http://example.org/ontology/dateOfBirth> "01/09/1926"^^xsd:date ;
+                <http://example.org/ontology/dateOfDeath> "19/06/2018"^^xsd:date ;
+                :placeOfDeath "Boston, Massachusetts, USA" ;
+                :Nationality "American" ;
+                :placeOfBirth "Atlanta, Georgia, USA" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#The_Claim_Of_Reason
+:The_Claim_Of_Reason rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Work> ;
+                     :hasAuthor :Stanley_Cavell ;
+                     :yearOfPublication "1979"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#The_Concept_Of_Mind
+:The_Concept_Of_Mind rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Work> ;
+                     :hasAuthor :Gilbert_Ryle ;
+                     :yearOfPublication "1949"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#The_Critique_Of_Pure_Reason
+:The_Critique_Of_Pure_Reason rdf:type owl:NamedIndividual ,
+                                      <http://example.org/ontology/Work> ;
+                             :hasAuthor :Immanuel_Kant ;
+                             :yearOfPublication "1781"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#The_Idea_Of_A_Social_Science
+:The_Idea_Of_A_Social_Science rdf:type owl:NamedIndividual ,
+                                       <http://example.org/ontology/Work> ;
+                              :hasAuthor :Peter_Winch ;
+                              :yearOfPublication "1958"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#The_Realistic_Spirit
+:The_Realistic_Spirit rdf:type owl:NamedIndividual ,
+                               <http://example.org/ontology/Work> ;
+                      :hasAuthor :Cora_Diamond ;
+                      :yearOfPublication "1991"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#The_World_As_Will_And_Representation
+:The_World_As_Will_And_Representation rdf:type owl:NamedIndividual ,
+                                               <http://example.org/ontology/Work> ;
+                                      :hasAuthor :Arthur_Schopenhauer ;
+                                      :yearOfPublication "1818"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Theory_Of_Communicative_Action
+:Theory_Of_Communicative_Action rdf:type owl:NamedIndividual ,
+                                         <http://example.org/ontology/Work> ;
+                                :hasAuthor :Jürgen_Habermas ;
+                                :yearOfPublication "1981"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Thus_Spoke_Zarathustra
+:Thus_Spoke_Zarathustra rdf:type owl:NamedIndividual ,
+                                 <http://example.org/ontology/Work> ;
+                        :hasAuthor :Friedrich_Nietzsche ;
+                        :yearOfPublication "1883"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#William_James
+:William_James rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/dateOfBirth> "11/01/1842"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "26/08/1910"^^xsd:date ;
+               :placeOfDeath "Chocorua, New Hampshire, USA" ;
+               :Nationality "American" ;
+               :placeOfBirth "New York, New York, USA" .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32#Wittgenstein_On_Rules_And_Private_Language
+:Wittgenstein_On_Rules_And_Private_Language rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/ontology/Work> ;
+                                            :hasAuthor :Saul_Kripke ;
+                                            :yearOfPublication "1982"^^:xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-32/Elizabeth_Anscombe
+:Elizabeth_Anscombe rdf:type owl:NamedIndividual ,
+                             <http://example.org/ontology/Philosopher> ;
+                    <http://example.org/ontology/dateOfBirth> "18/03/1919"^^xsd:date ;
+                    <http://example.org/ontology/dateOfDeath> "05/01/2001"^^xsd:date ;
+                    :placeOfDeath "Cambridge, England" ;
+                    :Nationality "British" ;
+                    :placeOfBirth "Limerick, Ireland" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Agostino
+                        :Arthur_Schopenhauer
+                        :Bertrand_Russell
+                        :Cora_Diamond
+                        :David_Hume
+                        :Friedrich_Nietzsche
+                        :George_Edward_Moore
+                        :Gilbert_Ryle
+                        :Gottlob_Frege
+                        :Immanuel_Kant
+                        :John_Langshaw_Austin
+                        :John_McDowell
+                        :Jürgen_Habermas
+                        :Ludwig_Wittgestein
+                        :Martin_Heidegger
+                        :Peter_Winch
+                        :Richard_Rorty
+                        :Saul_Kripke
+                        :Stanley_Cavell
+                        :William_James
+                        :Elizabeth_Anscombe
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
