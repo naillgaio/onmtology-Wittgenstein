@@ -1,0 +1,1001 @@
+@prefix : <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/> .
+
+<http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/ontology/beginningYear
+<http://example.org/ontology/beginningYear> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/belongsToSchool
+<http://example.org/ontology/belongsToSchool> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/birthYear
+<http://example.org/ontology/birthYear> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/deathYear
+<http://example.org/ontology/deathYear> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/endYear
+<http://example.org/ontology/endYear> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/hasConceptDomain
+<http://example.org/ontology/hasConceptDomain> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/hasCreated
+<http://example.org/ontology/hasCreated> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/hasInfluenceType
+<http://example.org/ontology/hasInfluenceType> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/hasRecipient
+<http://example.org/ontology/hasRecipient> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/hasSource
+<http://example.org/ontology/hasSource> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/influenceDescription
+<http://example.org/ontology/influenceDescription> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/influenceIntensity
+<http://example.org/ontology/influenceIntensity> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/nationality
+<http://example.org/ontology/nationality> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/typefInfluenceDescription
+<http://example.org/ontology/typefInfluenceDescription> rdf:type owl:AnnotationProperty .
+
+
+###  http://example.org/ontology/yearOfPublication
+<http://example.org/ontology/yearOfPublication> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/influence#hasInfluenced
+<http://example.org/influence#hasInfluenced> rdf:type owl:ObjectProperty ;
+                                             owl:equivalentProperty <http://www.co-ode.org/ontologies/ont.owl#influenced> ;
+                                             rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                         <http://example.org/influence#PhilosophicalSchool> ,
+                                                         <http://example.org/ontology/Work> ,
+                                                         <http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> ,
+                                                         :Philosopher ;
+                                             rdfs:range <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                        :Philosopher .
+
+
+###  http://example.org/influence#hasNationality
+<http://example.org/influence#hasNationality> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                          :Philosopher ;
+                                              rdfs:range <http://example.org/influence#Nationality> .
+
+
+###  http://example.org/influence#hasWork
+<http://example.org/influence#hasWork> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                   :Philosopher ;
+                                       rdfs:range <http://example.org/ontology/Work> .
+
+
+###  http://example.org/influence#influencedPhase
+<http://example.org/influence#influencedPhase> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#influenced> ;
+                                               rdfs:domain <http://example.org/influence#Influence> ;
+                                               rdfs:range <http://example.org/influence#Phase> .
+
+
+###  http://example.org/influence#influencesWork
+<http://example.org/influence#influencesWork> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf <http://www.co-ode.org/ontologies/ont.owl#influenced> ;
+                                              rdfs:range <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#authored
+<http://www.co-ode.org/ontologies/ont.owl#authored> rdf:type owl:ObjectProperty ;
+                                                    owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#hasAuthor> ;
+                                                    rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                                :Philosopher ;
+                                                    rdfs:range <http://example.org/ontology/Work> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#belongsToSchool
+<http://www.co-ode.org/ontologies/ont.owl#belongsToSchool> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                                       <http://example.org/ontology/Work> ,
+                                                                       :Philosopher ;
+                                                           rdfs:range <http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasAuthor
+<http://www.co-ode.org/ontologies/ont.owl#hasAuthor> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <http://example.org/ontology/Work> ;
+                                                     rdfs:range :Philosopher .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain
+<http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> rdf:type owl:ObjectProperty ;
+                                                            rdfs:range <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType
+<http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> rdf:type owl:ObjectProperty ;
+                                                            rdfs:domain <http://example.org/influence#Influence> ;
+                                                            rdfs:range <http://example.org/influence#InfluenceType> .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasRecipient
+<http://www.co-ode.org/ontologies/ont.owl#hasRecipient> rdf:type owl:ObjectProperty ;
+                                                        rdfs:range <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                                   :Philosopher .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#influenced
+<http://www.co-ode.org/ontologies/ont.owl#influenced> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <http://www.co-ode.org/ontologies/ont.owl#wasInfluencedBy> ;
+                                                      rdfs:domain <http://example.org/influence#Phase> ,
+                                                                  <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                                  <http://example.org/ontology/Work> ,
+                                                                  <http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> ,
+                                                                  :Philosopher ;
+                                                      rdfs:range <http://example.org/influence#Phase> ,
+                                                                 <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                                 <http://example.org/ontology/Work> ,
+                                                                 <http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> ,
+                                                                 :Philosopher .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#wasInfluencedBy
+<http://www.co-ode.org/ontologies/ont.owl#wasInfluencedBy> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                                       <http://example.org/influence#PhilosophicalSchool> ,
+                                                                       <http://example.org/ontology/Work> ,
+                                                                       :Philosopher ;
+                                                           rdfs:range <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                                      <http://example.org/ontology/Work> ,
+                                                                      <http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> ,
+                                                                      :Philosopher .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://example.org/influence#Influence> ,
+                       <http://example.org/ontology/InfluenceRelationship> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/influence#birthYear
+<http://example.org/influence#birthYear> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                     :Philosopher ;
+                                         rdfs:range xsd:gYear .
+
+
+###  http://example.org/influence#deathYear
+<http://example.org/influence#deathYear> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ,
+                                                     :Philosopher ;
+                                         rdfs:range xsd:gYear .
+
+
+###  http://example.org/influence#explicitReference
+<http://example.org/influence#explicitReference> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:domain <http://example.org/influence#Influence> ;
+                                                 rdfs:range xsd:boolean .
+
+
+###  http://example.org/influence#influenceExplanation
+<http://example.org/influence#influenceExplanation> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <http://example.org/influence#Influence> ;
+                                                    rdfs:range xsd:string .
+
+
+###  http://example.org/influence#influenceIntensity
+<http://example.org/influence#influenceIntensity> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <http://example.org/influence#Influence> ;
+                                                  rdfs:range xsd:string .
+
+
+###  http://example.org/influence#workTitle
+<http://example.org/influence#workTitle> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/ontology/Work> ;
+                                         rdfs:range xsd:string .
+
+
+###  http://example.org/influence#workYear
+<http://example.org/influence#workYear> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <http://example.org/ontology/Work> ;
+                                        rdfs:range xsd:gYear .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#beginningYear
+<http://www.co-ode.org/ontologies/ont.owl#beginningYear> rdf:type owl:DatatypeProperty ;
+                                                         rdfs:range xsd:gYear .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#endYear
+<http://www.co-ode.org/ontologies/ont.owl#endYear> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:range xsd:gYear .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#hasIntensity
+<http://www.co-ode.org/ontologies/ont.owl#hasIntensity> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:domain <http://example.org/influence#Influence> ;
+                                                        rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/influence#Influence
+<http://example.org/influence#Influence> rdf:type owl:Class ;
+                                         owl:equivalentClass <http://example.org/ontology/InfluenceRelationship> .
+
+
+###  http://example.org/influence#InfluenceType
+<http://example.org/influence#InfluenceType> rdf:type owl:Class ;
+                                             owl:equivalentClass <http://example.org/ontology/TypeOfInfluence> .
+
+
+###  http://example.org/influence#Nationality
+<http://example.org/influence#Nationality> rdf:type owl:Class .
+
+
+###  http://example.org/influence#Phase
+<http://example.org/influence#Phase> rdf:type owl:Class .
+
+
+###  http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein
+<http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf :Philosopher .
+
+
+###  http://example.org/influence#PhilosophicalSchool
+<http://example.org/influence#PhilosophicalSchool> rdf:type owl:Class ;
+                                                   owl:equivalentClass <http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> .
+
+
+###  http://example.org/ontology/InfluenceRelationship
+<http://example.org/ontology/InfluenceRelationship> rdf:type owl:Class .
+
+
+###  http://example.org/ontology/PhilosopherInfluencedByWittgenstein
+<http://example.org/ontology/PhilosopherInfluencedByWittgenstein> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf :Philosopher .
+
+
+###  http://example.org/ontology/TypeOfInfluence
+<http://example.org/ontology/TypeOfInfluence> rdf:type owl:Class .
+
+
+###  http://example.org/ontology/Work
+<http://example.org/ontology/Work> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#ConceptDomain
+<http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> rdf:type owl:Class .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought
+<http://www.co-ode.org/ontologies/ont.owl#SchoolOfThought> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/Philosopher
+:Philosopher rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/influence#American
+<http://example.org/influence#American> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/influence#Nationality> .
+
+
+###  http://example.org/influence#Analytic_philosophy
+<http://example.org/influence#Analytic_philosophy> rdf:type owl:NamedIndividual ,
+                                                            <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Arthur_Schopenhauer
+<http://example.org/influence#Arthur_Schopenhauer> rdf:type owl:NamedIndividual ,
+                                                            <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                                   <http://example.org/influence#hasNationality> <http://example.org/influence#German> ;
+                                                   <http://example.org/influence#birthYear> "1788"^^xsd:gYear ;
+                                                   <http://example.org/influence#deathYear> "1860"^^xsd:gYear .
+
+
+###  http://example.org/influence#Austrian
+<http://example.org/influence#Austrian> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/influence#Nationality> .
+
+
+###  http://example.org/influence#Bertrand_Russell
+<http://example.org/influence#Bertrand_Russell> rdf:type owl:NamedIndividual ,
+                                                         <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                                <http://example.org/influence#hasNationality> <http://example.org/influence#British> ;
+                                                <http://example.org/influence#birthYear> "1872"^^xsd:gYear ;
+                                                <http://example.org/influence#deathYear> "1970"^^xsd:gYear .
+
+
+###  http://example.org/influence#British
+<http://example.org/influence#British> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/influence#Nationality> .
+
+
+###  http://example.org/influence#David_Hume
+<http://example.org/influence#David_Hume> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                          <http://example.org/influence#hasNationality> <http://example.org/influence#Scottish> ;
+                                          <http://example.org/influence#birthYear> "1711"^^xsd:gYear ;
+                                          <http://example.org/influence#deathYear> "1776"^^xsd:gYear .
+
+
+###  http://example.org/influence#Empiricism
+<http://example.org/influence#Empiricism> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Franz_Brentano
+<http://example.org/influence#Franz_Brentano> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                              <http://example.org/influence#hasNationality> <http://example.org/influence#German> ;
+                                              <http://example.org/influence#birthYear> "1838"^^xsd:gYear ;
+                                              <http://example.org/influence#deathYear> "1917"^^xsd:gYear .
+
+
+###  http://example.org/influence#German
+<http://example.org/influence#German> rdf:type owl:NamedIndividual ,
+                                               <http://example.org/influence#Nationality> .
+
+
+###  http://example.org/influence#Gottlob_Frege
+<http://example.org/influence#Gottlob_Frege> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                             <http://example.org/influence#hasNationality> <http://example.org/influence#German> ;
+                                             <http://example.org/influence#birthYear> "1848"^^xsd:gYear ;
+                                             <http://example.org/influence#deathYear> "1925"^^xsd:gYear .
+
+
+###  http://example.org/influence#Idealism
+<http://example.org/influence#Idealism> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Immanuel_Kant
+<http://example.org/influence#Immanuel_Kant> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                             <http://example.org/influence#hasNationality> <http://example.org/influence#German> ;
+                                             <http://example.org/influence#birthYear> "1724"^^xsd:gYear ;
+                                             <http://example.org/influence#deathYear> "1804"^^xsd:gYear .
+
+
+###  http://example.org/influence#Logicism
+<http://example.org/influence#Logicism> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Ludwig_Boltzmann
+<http://example.org/influence#Ludwig_Boltzmann> rdf:type owl:NamedIndividual ,
+                                                         <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                                <http://example.org/influence#hasNationality> <http://example.org/influence#Austrian> ;
+                                                <http://example.org/influence#birthYear> "1844"^^xsd:gYear ;
+                                                <http://example.org/influence#deathYear> "1906"^^xsd:gYear .
+
+
+###  http://example.org/influence#Martin_Heidegger
+<http://example.org/influence#Martin_Heidegger> rdf:type owl:NamedIndividual ,
+                                                         <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                                <http://example.org/influence#hasNationality> <http://example.org/influence#German> ;
+                                                <http://example.org/influence#birthYear> "1889"^^xsd:gYear ;
+                                                <http://example.org/influence#deathYear> "1976"^^xsd:gYear .
+
+
+###  http://example.org/influence#Otto_Weininger
+<http://example.org/influence#Otto_Weininger> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                              <http://example.org/influence#hasNationality> <http://example.org/influence#Austrian> ;
+                                              <http://example.org/influence#birthYear> "1880"^^xsd:gYear ;
+                                              <http://example.org/influence#deathYear> "1903"^^xsd:gYear .
+
+
+###  http://example.org/influence#Phenomenology
+<http://example.org/influence#Phenomenology> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Physics
+<http://example.org/influence#Physics> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Pragmatism
+<http://example.org/influence#Pragmatism> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Psychological_Philosophy
+<http://example.org/influence#Psychological_Philosophy> rdf:type owl:NamedIndividual ,
+                                                                 <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#Scottish
+<http://example.org/influence#Scottish> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/influence#Nationality> .
+
+
+###  http://example.org/influence#Transcendental_idealism
+<http://example.org/influence#Transcendental_idealism> rdf:type owl:NamedIndividual ,
+                                                                <http://example.org/influence#PhilosophicalSchool> .
+
+
+###  http://example.org/influence#William_James
+<http://example.org/influence#William_James> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/influence#PhilosopherWhoHasInfluencedWittgenstein> ;
+                                             <http://example.org/influence#hasNationality> <http://example.org/influence#American> ;
+                                             <http://example.org/influence#birthYear> "1842"^^xsd:gYear ;
+                                             <http://example.org/influence#deathYear> "1910"^^xsd:gYear .
+
+
+###  http://example.org/ontology/ContextualReinterpretation
+<http://example.org/ontology/ContextualReinterpretation> rdf:type owl:NamedIndividual ,
+                                                                  <http://example.org/ontology/TypeOfInfluence> ;
+                                                         <http://example.org/ontology/typefInfluenceDescription> """Reframing Wittgenstein’s ideas in a different cultural, historical, or disciplinary context, often to explore their relevance beyond philosophy — e.g., in education, art, politics, or religion.
+""" .
+
+
+###  http://example.org/ontology/Cora_Diamond
+<http://example.org/ontology/Cora_Diamond> rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                           <http://example.org/influence#hasNationality> <http://example.org/influence#American> ;
+                                           <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/The_Realistic_Spirit> ;
+                                           <http://example.org/influence#birthYear> "1937"^^xsd:gYear ;
+                                           <http://example.org/ontology/birthYear> "1937"^^xsd:gYear ;
+                                           <http://example.org/ontology/deathYear> "alive"^^xsd:gYear ;
+                                           <http://example.org/ontology/hasCreated> <http://example.org/ontology/The_Realistic_Spirit> ;
+                                           <http://example.org/ontology/nationality> "American" .
+
+
+###  http://example.org/ontology/EditorialTransmission
+<http://example.org/ontology/EditorialTransmission> rdf:type owl:NamedIndividual ,
+                                                             <http://example.org/ontology/TypeOfInfluence> ;
+                                                    <http://example.org/ontology/typefInfluenceDescription> "The literal or philological transmission of Wittgenstein's texts, notes, manuscripts, or collections. The influence lies in preserving, editing, or publishing his thought, often posthumously, without altering its core content." .
+
+
+###  http://example.org/ontology/Elizabeth_Anscombe
+<http://example.org/ontology/Elizabeth_Anscombe> rdf:type owl:NamedIndividual ,
+                                                          <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                                 <http://example.org/influence#hasNationality> <http://example.org/influence#British> ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/Intention> ;
+                                                 <http://example.org/influence#birthYear> "1919"^^xsd:gYear ;
+                                                 <http://example.org/influence#deathYear> "2001"^^xsd:gYear ;
+                                                 <http://example.org/ontology/birthYear> "1919"^^xsd:gYear ;
+                                                 <http://example.org/ontology/deathYear> "2001"^^xsd:gYear ;
+                                                 <http://example.org/ontology/hasCreated> <http://example.org/ontology/Intention> ;
+                                                 <http://example.org/ontology/nationality> "British" .
+
+
+###  http://example.org/ontology/ExtensionToNewFields
+<http://example.org/ontology/ExtensionToNewFields> rdf:type owl:NamedIndividual ,
+                                                            <http://example.org/ontology/TypeOfInfluence> ;
+                                                   <http://example.org/ontology/typefInfluenceDescription> "Application of Wittgensteinian ideas to fields outside traditional philosophy, such as cognitive science, AI, anthropology, or literary theory — expanding his influence across disciplines." .
+
+
+###  http://example.org/ontology/Gilbert_Ryle
+<http://example.org/ontology/Gilbert_Ryle> rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                           <http://example.org/influence#hasNationality> <http://example.org/influence#British> ;
+                                           <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/The_Concept_of_Mind> ;
+                                           <http://example.org/influence#birthYear> "1900"^^xsd:gYear ;
+                                           <http://example.org/influence#deathYear> "1976"^^xsd:gYear ;
+                                           <http://example.org/ontology/birthYear> "1900"^^xsd:gYear ;
+                                           <http://example.org/ontology/deathYear> "1976"^^xsd:gYear ;
+                                           <http://example.org/ontology/hasCreated> <http://example.org/ontology/The_Concept_of_Mind> ;
+                                           <http://example.org/ontology/nationality> "British" .
+
+
+###  http://example.org/ontology/How_to_Do_Things_with_Words
+<http://example.org/ontology/How_to_Do_Things_with_Words> rdf:type owl:NamedIndividual ,
+                                                                   <http://example.org/ontology/Work> ;
+                                                          <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Ordinary language philosophy" ;
+                                                          <http://example.org/ontology/yearOfPublication> "1962"^^xsd:gYear .
+
+
+###  http://example.org/ontology/Intention
+<http://example.org/ontology/Intention> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/ontology/Work> ;
+                                        <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Neo-Aristotelianism" ;
+                                        <http://example.org/ontology/yearOfPublication> "1957"^^xsd:gYear .
+
+
+###  http://example.org/ontology/John_Langshaw_Austin
+<http://example.org/ontology/John_Langshaw_Austin> rdf:type owl:NamedIndividual ,
+                                                            <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                                   <http://example.org/influence#hasNationality> <http://example.org/influence#British> ;
+                                                   <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/How_to_Do_Things_with_Words> ;
+                                                   <http://example.org/influence#birthYear> "1911"^^xsd:gYear ;
+                                                   <http://example.org/influence#deathYear> "1960"^^xsd:gYear ;
+                                                   <http://example.org/ontology/birthYear> "1911"^^xsd:gYear ;
+                                                   <http://example.org/ontology/deathYear> "1960"^^xsd:gYear ;
+                                                   <http://example.org/ontology/hasCreated> <http://example.org/ontology/How_to_Do_Things_with_Words> ;
+                                                   <http://example.org/ontology/nationality> "British" .
+
+
+###  http://example.org/ontology/John_McDowell
+<http://example.org/ontology/John_McDowell> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                            <http://example.org/influence#hasNationality> :SouthAfrican ;
+                                            <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/Mind_and_World> ;
+                                            <http://example.org/influence#birthYear> "1942"^^xsd:gYear ;
+                                            <http://example.org/ontology/birthYear> "1942"^^xsd:gYear ;
+                                            <http://example.org/ontology/deathYear> "alive"^^xsd:gYear ;
+                                            <http://example.org/ontology/hasCreated> <http://example.org/ontology/Mind_and_World> ;
+                                            <http://example.org/ontology/nationality> "South African-British" .
+
+
+###  http://example.org/ontology/Jürgen_Habermas
+<http://example.org/ontology/Jürgen_Habermas> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                              <http://example.org/influence#hasNationality> <http://example.org/influence#German> ;
+                                              <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/Theory_of_Communicative_Action_> ;
+                                              <http://example.org/influence#birthYear> "1929"^^xsd:gYear ;
+                                              <http://example.org/ontology/birthYear> "1929"^^xsd:gYear ;
+                                              <http://example.org/ontology/deathYear> "alive"^^xsd:gYear ;
+                                              <http://example.org/ontology/hasCreated> <http://example.org/ontology/Theory_of_Communicative_Action_> ;
+                                              <http://example.org/ontology/nationality> "German" .
+
+
+###  http://example.org/ontology/MethodAdoption
+<http://example.org/ontology/MethodAdoption> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/ontology/TypeOfInfluence> ;
+                                             <http://example.org/ontology/typefInfluenceDescription> "The adoption of specific methods characteristic of Wittgenstein’s approach — such as linguistic analysis, the use of ordinary language examples, or his “therapeutic” method of dissolving philosophical problems." .
+
+
+###  http://example.org/ontology/Mind_and_World
+<http://example.org/ontology/Mind_and_World> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/ontology/Work> ;
+                                             <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Neo-Hegelianism, Philosophy of mind" ;
+                                             <http://example.org/ontology/yearOfPublication> "1994"^^xsd:gYear .
+
+
+###  http://example.org/ontology/Peter_Winch
+<http://example.org/ontology/Peter_Winch> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                          <http://example.org/influence#hasNationality> <http://example.org/influence#British> ;
+                                          <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/The_Idea_of_a_Social_Science> ;
+                                          <http://example.org/influence#birthYear> "1926"^^xsd:gYear ;
+                                          <http://example.org/influence#deathYear> "1997"^^xsd:gYear ;
+                                          <http://example.org/ontology/birthYear> "1926"^^xsd:gYear ;
+                                          <http://example.org/ontology/deathYear> "1997"^^xsd:gYear ;
+                                          <http://example.org/ontology/hasCreated> <http://example.org/ontology/The_Idea_of_a_Social_Science> ;
+                                          <http://example.org/ontology/nationality> "British" .
+
+
+###  http://example.org/ontology/Philosophy_and_the_Mirror_of_Nature
+<http://example.org/ontology/Philosophy_and_the_Mirror_of_Nature> rdf:type owl:NamedIndividual ,
+                                                                           <http://example.org/ontology/Work> ;
+                                                                  <http://example.org/ontology/belongsToSchool> "Pragmatism, Postmodernism, Anti-realism" ;
+                                                                  <http://example.org/ontology/yearOfPublication> "1979"^^xsd:gYear .
+
+
+###  http://example.org/ontology/Richard_Rorty
+<http://example.org/ontology/Richard_Rorty> rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                            <http://example.org/influence#hasNationality> <http://example.org/influence#American> ;
+                                            <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/Philosophy_and_the_Mirror_of_Nature> ;
+                                            <http://example.org/influence#birthYear> "1931"^^xsd:gYear ;
+                                            <http://example.org/influence#deathYear> "2007"^^xsd:gYear ;
+                                            <http://example.org/ontology/birthYear> "1931"^^xsd:gYear ;
+                                            <http://example.org/ontology/deathYear> "2007"^^xsd:gYear ;
+                                            <http://example.org/ontology/hasCreated> <http://example.org/ontology/Philosophy_and_the_Mirror_of_Nature> ;
+                                            <http://example.org/ontology/nationality> "American" .
+
+
+###  http://example.org/ontology/Saul_Kripke
+<http://example.org/ontology/Saul_Kripke> rdf:type owl:NamedIndividual ,
+                                                   <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                          <http://example.org/influence#hasNationality> <http://example.org/influence#American> ;
+                                          <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/Wittgenstein_on_Rules_and_Private_Language> ;
+                                          <http://example.org/influence#birthYear> "1940"^^xsd:gYear ;
+                                          <http://example.org/influence#deathYear> "2022"^^xsd:gYear ;
+                                          <http://example.org/ontology/birthYear> "1940"^^xsd:gYear ;
+                                          <http://example.org/ontology/deathYear> "2022"^^xsd:gYear ;
+                                          <http://example.org/ontology/hasCreated> <http://example.org/ontology/Wittgenstein_on_Rules_and_Private_Language> ;
+                                          <http://example.org/ontology/nationality> "American" .
+
+
+###  http://example.org/ontology/Stanley_Cavell
+<http://example.org/ontology/Stanley_Cavell> rdf:type owl:NamedIndividual ,
+                                                      <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                             <http://example.org/influence#hasNationality> <http://example.org/influence#American> ;
+                                             <http://www.co-ode.org/ontologies/ont.owl#authored> <http://example.org/ontology/The_Claim_of_Reason> ;
+                                             <http://example.org/influence#birthYear> "1926"^^xsd:gYear ;
+                                             <http://example.org/influence#deathYear> "2018"^^xsd:gYear ;
+                                             <http://example.org/ontology/birthYear> "1926"^^xsd:gYear ;
+                                             <http://example.org/ontology/deathYear> "2018"^^xsd:gYear ;
+                                             <http://example.org/ontology/hasCreated> <http://example.org/ontology/The_Claim_of_Reason> ;
+                                             <http://example.org/ontology/nationality> "American" .
+
+
+###  http://example.org/ontology/SynthesisWithOtherTheories
+<http://example.org/ontology/SynthesisWithOtherTheories> rdf:type owl:NamedIndividual ,
+                                                                  <http://example.org/ontology/TypeOfInfluence> ;
+                                                         <http://example.org/ontology/typefInfluenceDescription> "Combining Wittgenstein’s philosophy with other major frameworks (e.g., phenomenology, pragmatism, structuralism), creating hybrid approaches or comparative analyses." .
+
+
+###  http://example.org/ontology/SystematicReinterpretation
+<http://example.org/ontology/SystematicReinterpretation> rdf:type owl:NamedIndividual ,
+                                                                  <http://example.org/ontology/TypeOfInfluence> ;
+                                                         <http://example.org/ontology/typefInfluenceDescription> "A reinterpretation of Wittgenstein’s entire philosophical framework from a different or updated perspective, reorganizing key concepts to fit new theoretical contexts or respond to contemporary philosophical issues." .
+
+
+###  http://example.org/ontology/The_Claim_of_Reason
+<http://example.org/ontology/The_Claim_of_Reason> rdf:type owl:NamedIndividual ,
+                                                           <http://example.org/ontology/Work> ;
+                                                  <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Hermeneutics, Aesthetic philosophy" ;
+                                                  <http://example.org/ontology/yearOfPublication> "1979"^^xsd:gYear .
+
+
+###  http://example.org/ontology/The_Concept_of_Mind
+<http://example.org/ontology/The_Concept_of_Mind> rdf:type owl:NamedIndividual ,
+                                                           <http://example.org/ontology/Work> ;
+                                                  <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Philosophical behaviorism" ;
+                                                  <http://example.org/ontology/yearOfPublication> "1949"^^xsd:gYear .
+
+
+###  http://example.org/ontology/The_Idea_of_a_Social_Science
+<http://example.org/ontology/The_Idea_of_a_Social_Science> rdf:type owl:NamedIndividual ,
+                                                                    <http://example.org/ontology/Work> ;
+                                                           <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Wittgensteinian hermeneutics, Philosophy of social science" ;
+                                                           <http://example.org/ontology/yearOfPublication> "1958"^^xsd:gYear .
+
+
+###  http://example.org/ontology/The_Realistic_Spirit
+<http://example.org/ontology/The_Realistic_Spirit> rdf:type owl:NamedIndividual ,
+                                                            <http://example.org/ontology/Work> ;
+                                                   <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Wittgensteinian ethics, Moral realism" ;
+                                                   <http://example.org/ontology/yearOfPublication> "1991"^^xsd:gYear .
+
+
+###  http://example.org/ontology/ThematicAdoption
+<http://example.org/ontology/ThematicAdoption> rdf:type owl:NamedIndividual ,
+                                                        <http://example.org/ontology/TypeOfInfluence> ;
+                                               <http://example.org/ontology/typefInfluenceDescription> """Selective integration of themes from Wittgenstein’s work (e.g. language-games, rule-following, private language) without necessarily adopting his methodology or broader philosophical stance.
+""" .
+
+
+###  http://example.org/ontology/TheoreticalExtension_
+<http://example.org/ontology/TheoreticalExtension_> rdf:type owl:NamedIndividual ,
+                                                             <http://example.org/ontology/TypeOfInfluence> ;
+                                                    <http://example.org/ontology/typefInfluenceDescription> "Development of new theoretical insights that build on Wittgenstein’s ideas — going beyond what he explicitly wrote, while remaining consistent with his core philosophical vision." .
+
+
+###  http://example.org/ontology/Theory_of_Communicative_Action_
+<http://example.org/ontology/Theory_of_Communicative_Action_> rdf:type owl:NamedIndividual ,
+                                                                       <http://example.org/ontology/Work> ;
+                                                              <http://example.org/ontology/belongsToSchool> "Frankfurt School, Critical Theory" ;
+                                                              <http://example.org/ontology/yearOfPublication> "1981"^^xsd:gYear .
+
+
+###  http://example.org/ontology/Wittgenstein_on_Rules_and_Private_Language
+<http://example.org/ontology/Wittgenstein_on_Rules_and_Private_Language> rdf:type owl:NamedIndividual ,
+                                                                                  <http://example.org/ontology/Work> ;
+                                                                         <http://example.org/ontology/belongsToSchool> "Analytic philosophy, Metaphysical realism" ;
+                                                                         <http://example.org/ontology/yearOfPublication> "1982"^^xsd:gYear .
+
+
+###  http://example.org/ontology/influenceOnAnscombe
+<http://example.org/ontology/influenceOnAnscombe> rdf:type owl:NamedIndividual ,
+                                                           <http://example.org/ontology/InfluenceRelationship> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :Ethics ,
+                                                                                                              :PhilosophyOfAction ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/EditorialTransmission> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Elizabeth_Anscombe> ;
+                                                  <http://example.org/influence#birthYear> "1944"^^xsd:gYear ;
+                                                  <http://example.org/influence#deathYear> "2001"^^xsd:gYear ;
+                                                  <http://example.org/influence#influenceExplanation> "Anscombe, a direct student and literary executor of Wittgenstein, extended his philosophy of action and applied his methodology to ethics. She translated and edited key works by Wittgenstein, ensuring their faithful transmission. In her book Intention (1957), she developed a philosophy of action that applies Wittgenstein’s critique of Cartesian mentalism." ;
+                                                  <http://example.org/influence#influenceIntensity> "Strong" ;
+                                                  <http://example.org/ontology/beginningYear> "1944"^^xsd:gYear ;
+                                                  <http://example.org/ontology/endYear> "2001"^^xsd:gYear ;
+                                                  <http://example.org/ontology/hasConceptDomain> "Philosophy of Action / Ethics" ;
+                                                  <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/EditorialTransmission> ;
+                                                  <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Elizabeth_Anscombe> ;
+                                                  <http://example.org/ontology/influenceDescription> "Anscombe, a direct student and literary executor of Wittgenstein, extended his philosophy of action and applied his methodology to ethics. She translated and edited key works by Wittgenstein, ensuring their faithful transmission. In her book Intention (1957), she developed a philosophy of action that applies Wittgenstein’s critique of Cartesian mentalism." ;
+                                                  <http://example.org/ontology/influenceIntensity> "strong" .
+
+
+###  http://example.org/ontology/influenceOnAustin
+<http://example.org/ontology/influenceOnAustin> rdf:type owl:NamedIndividual ,
+                                                         <http://example.org/ontology/InfluenceRelationship> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :PhilosophyOfLanguage ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/ThematicAdoption> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/John_Langshaw_Austin> ;
+                                                <http://example.org/influence#influenceExplanation> "Although he developed an independent path, Austin shared with Wittgenstein a focus on ordinary language and the multiplicity of linguistic functions. His theory of speech acts, developed in How to Do Things with Words (1962), extends Wittgenstein’s insight that language is not only used to describe, but also to perform actions." ;
+                                                <http://example.org/influence#influenceIntensity> "Moderate" ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1940"^^xsd:gYear ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#endYear> "1960"^^xsd:gYear ;
+                                                <http://example.org/ontology/beginningYear> "1940"^^xsd:gYear ;
+                                                <http://example.org/ontology/endYear> "1960"^^xsd:gYear ;
+                                                <http://example.org/ontology/hasConceptDomain> "Philosophy of Language" ;
+                                                <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/ThematicAdoption> ;
+                                                <http://example.org/ontology/hasRecipient> <http://example.org/ontology/John_Langshaw_Austin> ;
+                                                <http://example.org/ontology/influenceDescription> "Although he developed an independent path, Austin shared with Wittgenstein a focus on ordinary language and the multiplicity of linguistic functions. His theory of speech acts, developed in How to Do Things with Words (1962), extends Wittgenstein’s insight that language is not only used to describe, but also to perform actions." ;
+                                                <http://example.org/ontology/influenceIntensity> "moderate" .
+
+
+###  http://example.org/ontology/influenceOnCavell
+<http://example.org/ontology/influenceOnCavell> rdf:type owl:NamedIndividual ,
+                                                         <http://example.org/ontology/InfluenceRelationship> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :Aesthetics ,
+                                                                                                            :Epistemology ,
+                                                                                                            :OrdinaryLanguagePhilosophy ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/ContextualReinterpretation> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Stanley_Cavell> ;
+                                                <http://example.org/influence#influenceExplanation> "Cavell reinterpreted Wittgenstein within American cultural contexts, linking his ideas to skepticism, aesthetics, and popular culture. In his book The Claim of Reason (1979), he uses Wittgensteinian concepts such as “forms of life” to explore the relationship between ordinary language and philosophical skepticism, extending the analysis to film and literature." ;
+                                                <http://example.org/influence#influenceIntensity> "Strong" ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1962"^^xsd:gYear ,
+                                                                                                         "2018"^^xsd:gYear ;
+                                                <http://example.org/ontology/beginningYear> "1962"^^xsd:gYear ;
+                                                <http://example.org/ontology/endYear> "2018"^^xsd:gYear ;
+                                                <http://example.org/ontology/hasConceptDomain> "Epistemology / Aesthetics / Ordinary Language Philosophy" ;
+                                                <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/ContextualReinterpretation> ;
+                                                <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Stanley_Cavell> ;
+                                                <http://example.org/ontology/influenceDescription> "Cavell reinterpreted Wittgenstein within American cultural contexts, linking his ideas to skepticism, aesthetics, and popular culture. In his book The Claim of Reason (1979), he uses Wittgensteinian concepts such as “forms of life” to explore the relationship between ordinary language and philosophical skepticism, extending the analysis to film and literature." ;
+                                                <http://example.org/ontology/influenceIntensity> "strong" .
+
+
+###  http://example.org/ontology/influenceOnDiamond
+<http://example.org/ontology/influenceOnDiamond> rdf:type owl:NamedIndividual ,
+                                                          <http://example.org/ontology/InfluenceRelationship> ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :Logic ,
+                                                                                                             :Ethics ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/SystematicReinterpretation> ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Cora_Diamond> ;
+                                                 :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> ;
+                                                 <http://example.org/influence#influenceExplanation> "Diamond developed the “resolute reading” of the Tractatus, arguing that the work should be understood as a therapeutic exercise rather than the presentation of a theory. In her essays collected in The Realistic Spirit (1991), she contends that Wittgenstein aimed to lead the reader to recognize the nonsensical nature of attempts to say what can only be shown." ;
+                                                 <http://example.org/influence#influenceIntensity> "strong"^^xsd:gYear ;
+                                                 <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1980"^^xsd:gYear ;
+                                                 <http://example.org/ontology/beginningYear> "1980"^^xsd:gYear ;
+                                                 <http://example.org/ontology/endYear> "nan"^^xsd:gYear ;
+                                                 <http://example.org/ontology/hasConceptDomain> "Ethics / Logic" ;
+                                                 <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/SystematicReinterpretation> ;
+                                                 <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Cora_Diamond> ;
+                                                 <http://example.org/ontology/influenceDescription> "Diamond developed the “resolute reading” of the Tractatus, arguing that the work should be understood as a therapeutic exercise rather than the presentation of a theory. In her essays collected in The Realistic Spirit (1991), she contends that Wittgenstein aimed to lead the reader to recognize the nonsensical nature of attempts to say what can only be shown." ;
+                                                 <http://example.org/ontology/influenceIntensity> "strong" .
+
+
+###  http://example.org/ontology/influenceOnHabermas
+<http://example.org/ontology/influenceOnHabermas> rdf:type owl:NamedIndividual ,
+                                                           <http://example.org/ontology/InfluenceRelationship> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :SocialTheory ,
+                                                                                                              :PhilosophyOfLanguage ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/ThematicAdoption> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Jürgen_Habermas> ;
+                                                  :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> ;
+                                                  <http://example.org/influence#influenceExplanation> "Habermas integrated Wittgenstein’s conception of language as social practice into his theory of communicative action. In works such as The Theory of Communicative Action (1981), he adopted the idea that meaning is determined by social use and that linguistic rules are constitutive of social practices, combining these elements with Frankfurt School critical theory." ;
+                                                  <http://example.org/influence#influenceIntensity> "moderate" ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1965"^^xsd:gYear ;
+                                                  <http://example.org/ontology/beginningYear> "1965"^^xsd:gYear ;
+                                                  <http://example.org/ontology/endYear> "nan"^^xsd:gYear ;
+                                                  <http://example.org/ontology/hasConceptDomain> "Philosophy of Language / Social Theory" ;
+                                                  <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/ThematicAdoption> ;
+                                                  <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Jürgen_Habermas> ;
+                                                  <http://example.org/ontology/influenceDescription> "Habermas integrated Wittgenstein’s conception of language as social practice into his theory of communicative action. In works such as The Theory of Communicative Action (1981), he adopted the idea that meaning is determined by social use and that linguistic rules are constitutive of social practices, combining these elements with Frankfurt School critical theory." ;
+                                                  <http://example.org/ontology/influenceIntensity> "moderate" .
+
+
+###  http://example.org/ontology/influenceOnKripke
+<http://example.org/ontology/influenceOnKripke> rdf:type owl:NamedIndividual ,
+                                                         <http://example.org/ontology/InfluenceRelationship> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :Epistemology ,
+                                                                                                            :PhilosophyOfLanguage ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/SystematicReinterpretation> ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Saul_Kripke> ;
+                                                :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> ;
+                                                <http://example.org/influence#influenceExplanation> "Kripke systematically reinterpreted Wittgenstein’s problem of following a rule as a skeptical paradox and a skeptical solution. His interpretation in \"Wittgenstein on Rules and Private Language\" (1982) introduced a new approach to linguistic rules which, although controversial among Wittgenstein scholars, has had a profound influence on the philosophy of language." ;
+                                                <http://example.org/influence#influenceIntensity> "strong" ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1970"^^xsd:gYear ;
+                                                <http://www.co-ode.org/ontologies/ont.owl#endYear> "2022"^^xsd:gYear ;
+                                                <http://example.org/ontology/beginningYear> "1970"^^xsd:gYear ;
+                                                <http://example.org/ontology/endYear> "2022"^^xsd:gYear ;
+                                                <http://example.org/ontology/hasConceptDomain> "Philosophy of Language / Epistemology" ;
+                                                <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/SystematicReinterpretation> ;
+                                                <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Saul_Kripke> ;
+                                                <http://example.org/ontology/influenceDescription> "Kripke systematically reinterpreted Wittgenstein’s problem of following a rule as a skeptical paradox and a skeptical solution. His interpretation in \"Wittgenstein on Rules and Private Language\" (1982) introduced a new approach to linguistic rules which, although controversial among Wittgenstein scholars, has had a profound influence on the philosophy of language." ;
+                                                <http://example.org/ontology/influenceIntensity> "strong" .
+
+
+###  http://example.org/ontology/influenceOnMcDowell
+<http://example.org/ontology/influenceOnMcDowell> rdf:type owl:NamedIndividual ,
+                                                           <http://example.org/ontology/InfluenceRelationship> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :PhilosophyOfMind ,
+                                                                                                              :Epistemology ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/TheoreticalExtension_> ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/John_McDowell> ;
+                                                  :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> ;
+                                                  <http://example.org/influence#influenceExplanation> "McDowell extended Wittgensteinian philosophy by combining it with Hegelian and Kantian elements to develop a non-dualistic view of mind and world. In Mind and World (1994), he draws on Wittgenstein’s anti-reductionism and his critiques of the “myth of the given” to develop an account of perception that avoids both idealism and naive empiricism." ;
+                                                  <http://example.org/influence#influenceIntensity> "strong" ;
+                                                  <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1975"^^xsd:gYear ;
+                                                  <http://example.org/ontology/beginningYear> "1975"^^xsd:gYear ;
+                                                  <http://example.org/ontology/endYear> "nan"^^xsd:gYear ;
+                                                  <http://example.org/ontology/hasConceptDomain> "Epistemology / Philosophy of Mind" ;
+                                                  <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/TheoreticalExtension_> ;
+                                                  <http://example.org/ontology/hasRecipient> <http://example.org/ontology/John_McDowell> ;
+                                                  <http://example.org/ontology/influenceDescription> "McDowell extended Wittgensteinian philosophy by combining it with Hegelian and Kantian elements to develop a non-dualistic view of mind and world. In Mind and World (1994), he draws on Wittgenstein’s anti-reductionism and his critiques of the “myth of the given” to develop an account of perception that avoids both idealism and naive empiricism." ;
+                                                  <http://example.org/ontology/influenceIntensity> "strong" .
+
+
+###  http://example.org/ontology/influenceOnRorty
+<http://example.org/ontology/influenceOnRorty> rdf:type owl:NamedIndividual ,
+                                                        <http://example.org/ontology/InfluenceRelationship> ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :Epistemology ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/SynthesisWithOtherTheories> ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Richard_Rorty> ;
+                                               :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> ;
+                                               <http://example.org/influence#influenceExplanation> "Rorty integrated elements of Wittgenstein’s linguistic critique with American pragmatism and postmodern thought. In Philosophy and the Mirror of Nature (1979), he uses Wittgenstein’s critique of private language to attack foundationalist epistemology and promote an anti-representationalist view of knowledge." ;
+                                               <http://example.org/influence#influenceIntensity> "moderate" ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1965"^^xsd:gYear ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#endYear> "2007"^^xsd:gYear ;
+                                               <http://example.org/ontology/beginningYear> "1965"^^xsd:gYear ;
+                                               <http://example.org/ontology/endYear> "2007"^^xsd:gYear ;
+                                               <http://example.org/ontology/hasConceptDomain> "Epistemology" ;
+                                               <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/SynthesisWithOtherTheories> ;
+                                               <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Richard_Rorty> ;
+                                               <http://example.org/ontology/influenceDescription> "Rorty integrated elements of Wittgenstein’s linguistic critique with American pragmatism and postmodern thought. In Philosophy and the Mirror of Nature (1979), he uses Wittgenstein’s critique of private language to attack foundationalist epistemology and promote an anti-representationalist view of knowledge." ;
+                                               <http://example.org/ontology/influenceIntensity> "moderate" .
+
+
+###  http://example.org/ontology/influenceOnRyle
+<http://example.org/ontology/influenceOnRyle> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/ontology/InfluenceRelationship> ;
+                                              <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :PhilosophyOfMind ;
+                                              <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/MethodAdoption> ;
+                                              <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Gilbert_Ryle> ;
+                                              :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> ;
+                                              <http://example.org/influence#influenceExplanation> "Ryle adopted the Wittgensteinian therapeutic approach to dismantle Cartesian mind-body dualism. In his book The Concept of Mind (1949), he employs ordinary language analysis and the notion of a “category mistake” to critique the view of the mind as a “ghost in the machine,” showing how traditional philosophical problems arise from linguistic confusions." ;
+                                              <http://example.org/influence#influenceIntensity> "moderate" ;
+                                              <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1929"^^xsd:gYear ;
+                                              <http://www.co-ode.org/ontologies/ont.owl#endYear> "1976"^^xsd:gYear ;
+                                              <http://example.org/ontology/beginningYear> "1929"^^xsd:gYear ;
+                                              <http://example.org/ontology/endYear> "1976"^^xsd:gYear ;
+                                              <http://example.org/ontology/hasConceptDomain> "Philosophy of Mind" ;
+                                              <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/MethodAdoption> ;
+                                              <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Gilbert_Ryle> ;
+                                              <http://example.org/ontology/influenceDescription> "Ryle adopted the Wittgensteinian therapeutic approach to dismantle Cartesian mind-body dualism. In his book The Concept of Mind (1949), he employs ordinary language analysis and the notion of a “category mistake” to critique the view of the mind as a “ghost in the machine,” showing how traditional philosophical problems arise from linguistic confusions." ;
+                                              <http://example.org/ontology/influenceIntensity> "moderate" .
+
+
+###  http://example.org/ontology/influenceOnWinch
+<http://example.org/ontology/influenceOnWinch> rdf:type owl:NamedIndividual ,
+                                                        <http://example.org/ontology/InfluenceRelationship> ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#hasConceptDomain> :PhilosophyOfSocialScience ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#hasInfluenceType> <http://example.org/ontology/ExtensionToNewFields> ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#hasRecipient> <http://example.org/ontology/Peter_Winch> ;
+                                               :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> ;
+                                               <http://example.org/influence#influenceExplanation> "Winch extended Wittgenstein’s ideas of “language games” and “forms of life” to anthropology and the social sciences. In his book The Idea of a Social Science (1958), he argues that understanding different social practices requires understanding their systems of linguistic rules, thereby applying Wittgenstein to the methodology of the social sciences and to cultural relativism." ;
+                                               <http://example.org/influence#influenceIntensity> "strong" ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#beginningYear> "1955"^^xsd:gYear ;
+                                               <http://www.co-ode.org/ontologies/ont.owl#endYear> "1997"^^xsd:gYear ;
+                                               <http://example.org/ontology/beginningYear> "1955"^^xsd:gYear ;
+                                               <http://example.org/ontology/endYear> "1997"^^xsd:gYear ;
+                                               <http://example.org/ontology/hasConceptDomain> "Philosophy of Social Science" ;
+                                               <http://example.org/ontology/hasInfluenceType> <http://example.org/ontology/ExtensionToNewFields> ;
+                                               <http://example.org/ontology/hasRecipient> <http://example.org/ontology/Peter_Winch> ;
+                                               <http://example.org/ontology/influenceDescription> "Winch extended Wittgenstein’s ideas of “language games” and “forms of life” to anthropology and the social sciences. In his book The Idea of a Social Science (1958), he argues that understanding different social practices requires understanding their systems of linguistic rules, thereby applying Wittgenstein to the methodology of the social sciences and to cultural relativism." ;
+                                               <http://example.org/ontology/influenceIntensity> "strong" .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein
+<http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> rdf:type owl:NamedIndividual ,
+                                                                        <http://example.org/ontology/PhilosopherInfluencedByWittgenstein> ;
+                                                               <http://example.org/influence#hasNationality> <http://example.org/influence#Austrian> ;
+                                                               <http://www.co-ode.org/ontologies/ont.owl#authored> :Philosophical_Investigations ,
+                                                                                                                   :Tractatus_Logico-philosophicus ;
+                                                               <http://example.org/influence#birthYear> "1889"^^xsd:gYear ;
+                                                               <http://example.org/influence#deathYear> "1951"^^xsd:gYear .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#Logic
+:Logic rdf:type owl:NamedIndividual ,
+                <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#PhilosophyOfMind
+:PhilosophyOfMind rdf:type owl:NamedIndividual ,
+                           <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#PhilosophyOfSocialScience
+:PhilosophyOfSocialScience rdf:type owl:NamedIndividual ,
+                                    <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> ;
+                           :hasSource <http://www.co-ode.org/ontologies/ont.owl#Ludwig_Wittgenstein> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49#SocialTheory
+:SocialTheory rdf:type owl:NamedIndividual ,
+                       <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/Aesthetics
+:Aesthetics rdf:type owl:NamedIndividual ,
+                     <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/Epistemology
+:Epistemology rdf:type owl:NamedIndividual ,
+                       <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/Ethics
+:Ethics rdf:type owl:NamedIndividual ,
+                 <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/OrdinaryLanguagePhilosophy
+:OrdinaryLanguagePhilosophy rdf:type owl:NamedIndividual ,
+                                     <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/Philosophical_Investigations
+:Philosophical_Investigations rdf:type owl:NamedIndividual ,
+                                       <http://example.org/ontology/Work> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/PhilosophyOfAction
+:PhilosophyOfAction rdf:type owl:NamedIndividual ,
+                             <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/PhilosophyOfLanguage
+:PhilosophyOfLanguage rdf:type owl:NamedIndividual ,
+                               <http://www.co-ode.org/ontologies/ont.owl#ConceptDomain> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/SouthAfrican
+:SouthAfrican rdf:type owl:NamedIndividual ,
+                       <http://example.org/influence#Nationality> .
+
+
+###  http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-49/Tractatus_Logico-philosophicus
+:Tractatus_Logico-philosophicus rdf:type owl:NamedIndividual ,
+                                         <http://example.org/ontology/Work> .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
