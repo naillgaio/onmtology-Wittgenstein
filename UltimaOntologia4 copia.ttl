@@ -19,7 +19,7 @@
                                                          :Person .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttldescription
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldescription
 :description rdf:type owl:AnnotationProperty .
 
 
@@ -31,7 +31,7 @@
 xsd:date rdf:type rdfs:Datatype .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlxsd:gYear
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlxsd:gYear
 :xsd:gYear rdf:type rdfs:Datatype .
 
 
@@ -68,7 +68,7 @@ xsd:date rdf:type rdfs:Datatype .
                                        rdfs:range <http://example.org/ontology/Theme> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlPhilosopherInfluencedWork
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherInfluencedWork
 :PhilosopherInfluencedWork rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
                            owl:inverseOf :WorkWasInfluencedByPhilosopher ;
@@ -76,7 +76,7 @@ xsd:date rdf:type rdfs:Datatype .
                            rdfs:range <http://example.org/ontology/Work> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlPhilosopherInlfuencedPhilosopher
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherInlfuencedPhilosopher
 :PhilosopherInlfuencedPhilosopher rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
                                   owl:inverseOf :PhilosopherWasInfluencedByPhilosopher ;
@@ -84,14 +84,14 @@ xsd:date rdf:type rdfs:Datatype .
                                   rdfs:range <http://example.org/ontology/Philosopher> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlPhilosopherWasInfluencedByPhilosopher
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherWasInfluencedByPhilosopher
 :PhilosopherWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
                                        rdfs:subPropertyOf :isInfluencedBy ;
                                        rdfs:domain <http://example.org/ontology/Philosopher> ;
                                        rdfs:range <http://example.org/ontology/Philosopher> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlPhilosopherWasInfluencedByWork
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherWasInfluencedByWork
 :PhilosopherWasInfluencedByWork rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf :PhilosopherWasInfluencedByPhilosopher ;
                                 owl:inverseOf :WorkInfluencedPhilosopher ;
@@ -99,78 +99,78 @@ xsd:date rdf:type rdfs:Datatype .
                                 rdfs:range <http://example.org/ontology/Work> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlWorkInfluencedPhilosopher
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWorkInfluencedPhilosopher
 :WorkInfluencedPhilosopher rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
                            rdfs:domain <http://example.org/ontology/Work> ;
                            rdfs:range <http://example.org/ontology/Philosopher> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlWorkWasInfluencedByPhilosopher
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWorkWasInfluencedByPhilosopher
 :WorkWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
                                 rdfs:subPropertyOf :isInfluencedBy ;
                                 rdfs:domain <http://example.org/ontology/Work> ;
                                 rdfs:range <http://example.org/ontology/Philosopher> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlbelongsToSchool
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlbelongsToSchool
 :belongsToSchool rdf:type owl:ObjectProperty ;
                  rdfs:domain <http://example.org/ontology/Philosopher> ;
                  rdfs:range :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttldealsWithTheme
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithTheme
 :dealsWithTheme rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttldealsWithThemeAsPhilosopher
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithThemeAsPhilosopher
 :dealsWithThemeAsPhilosopher rdf:type owl:ObjectProperty ;
                              rdfs:subPropertyOf :dealsWithTheme ;
                              rdfs:domain <http://example.org/ontology/Philosopher> ;
                              rdfs:range <http://example.org/ontology/Theme> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttldealsWithThemeAsSchoolOfThought
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithThemeAsSchoolOfThought
 :dealsWithThemeAsSchoolOfThought rdf:type owl:ObjectProperty ;
                                  rdfs:subPropertyOf :dealsWithTheme ;
                                  rdfs:domain :SchoolOfThought ;
                                  rdfs:range <http://example.org/ontology/Theme> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttldealsWithThemeAsWork
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithThemeAsWork
 :dealsWithThemeAsWork rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf :dealsWithTheme ;
                       rdfs:domain <http://example.org/ontology/Work> ;
                       rdfs:range <http://example.org/ontology/Theme> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlhasAuthor
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasAuthor
 :hasAuthor rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            rdfs:domain <http://example.org/ontology/Work> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlhasInfluenceType
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasInfluenceType
 :hasInfluenceType rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlhasRecipient
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasRecipient
 :hasRecipient rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlhasRecipientWork
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasRecipientWork
 :hasRecipientWork rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlhasSource
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasSource
 :hasSource rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlhasSourceWork
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasSourceWork
 :hasSourceWork rdf:type owl:ObjectProperty .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlisInfluencedBy
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlisInfluencedBy
 :isInfluencedBy rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 rdf:type owl:TransitiveProperty .
@@ -209,41 +209,41 @@ xsd:date rdf:type rdfs:Datatype .
                                          rdfs:range xsd:string .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlNationality
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlNationality
 :Nationality rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:string .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlbeginningYear
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlbeginningYear
 :beginningYear rdf:type owl:DatatypeProperty ;
                rdfs:domain <http://example.org/ontology/InfluenceEvent> ;
                rdfs:range :xsd:gYear .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlhasSurname
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasSurname
 :hasSurname rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlinfluenceIntensity
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlinfluenceIntensity
 :influenceIntensity rdf:type owl:DatatypeProperty ;
                     rdfs:domain <http://example.org/ontology/InfluenceEvent> ;
                     rdfs:range xsd:string .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlplaceOfBirth
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlplaceOfBirth
 :placeOfBirth rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:range xsd:string .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlplaceOfDeath
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlplaceOfDeath
 :placeOfDeath rdf:type owl:DatatypeProperty ,
                        owl:FunctionalProperty ;
               rdfs:range xsd:string .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlyearOfPublication
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlyearOfPublication
 :yearOfPublication rdf:type owl:DatatypeProperty ;
                    rdfs:domain <http://example.org/ontology/Work> ;
                    rdfs:range xsd:date ,
@@ -271,15 +271,15 @@ xsd:date rdf:type rdfs:Datatype .
 <http://example.org/ontology/Work> rdf:type owl:Class .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlInfluence
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence
 :Influence rdf:type owl:Class .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlSchoolOfThought
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlSchoolOfThought
 :SchoolOfThought rdf:type owl:Class .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlTypeOfInfleunce
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlTypeOfInfleunce
 :TypeOfInfleunce rdf:type owl:Class .
 
 
@@ -287,31 +287,31 @@ xsd:date rdf:type rdfs:Datatype .
 #    Individuals
 #################################################################
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlA_Defense_Of_Common_Sense
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttl
 :A_Defense_Of_Common_Sense rdf:type owl:NamedIndividual ,
                                     <http://example.org/ontology/Work> ;
                            :hasAuthor :George_Edward_Moore ;
                            :yearOfPublication "1925"^^:xsd:gYear .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlA_Treatise_Of_Human_Nature
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlA_Treatise_Of_Human_Nature
 :A_Treatise_Of_Human_Nature rdf:type owl:NamedIndividual ,
                                      <http://example.org/ontology/Work> ;
                             :hasAuthor :David_Hume ;
                             :yearOfPublication "1739"^^:xsd:gYear .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlAesthetic_Philosophy
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAesthetic_Philosophy
 :Aesthetic_Philosophy rdf:type owl:NamedIndividual ,
                                :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlAesthetics
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAesthetics
 :Aesthetics rdf:type owl:NamedIndividual ,
                      <http://example.org/ontology/Theme> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlAgostino
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAgostino
 :Agostino rdf:type owl:NamedIndividual ,
                    <http://example.org/ontology/Philosopher> ;
           <http://example.org/ontology/authored> :Confessions ;
@@ -326,17 +326,17 @@ xsd:date rdf:type rdfs:Datatype .
           :placeOfDeath "Hippo, Numidia (now Annaba, Algeria)" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlAnalytic_Philosophy
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAnalytic_Philosophy
 :Analytic_Philosophy rdf:type owl:NamedIndividual ,
                               :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlAnti_Realism
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAnti_Realism
 :Anti_Realism rdf:type owl:NamedIndividual ,
                        :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlArthur_Schopenhauer
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlArthur_Schopenhauer
 :Arthur_Schopenhauer rdf:type owl:NamedIndividual ,
                               <http://example.org/ontology/Philosopher> ;
                      <http://example.org/ontology/authored> :The_World_As_Will_And_Representation ;
@@ -348,12 +348,12 @@ xsd:date rdf:type rdfs:Datatype .
                      :placeOfDeath "Frankfurt" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlAugustinian_Christian_Theology
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAugustinian_Christian_Theology
 :Augustinian_Christian_Theology rdf:type owl:NamedIndividual ,
                                          :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlBegriffsschrift
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlBegriffsschrift
 :Begriffsschrift rdf:type owl:NamedIndividual ,
                           <http://example.org/ontology/Work> ;
                  :hasAuthor :Gottlob_Frege ;
@@ -367,7 +367,7 @@ xsd:date rdf:type rdfs:Datatype .
                 :yearOfPublication "1927"^^:xsd:gYear .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlBertrand_Russell
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlBertrand_Russell
 :Bertrand_Russell rdf:type owl:NamedIndividual ,
                            <http://example.org/ontology/Philosopher> ;
                   <http://example.org/ontology/authored> :Principia_Mathematica ;
@@ -379,18 +379,18 @@ xsd:date rdf:type rdfs:Datatype .
                   :placeOfDeath "Penrhyndeudraeth, Wales" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlChristian_Neoplatonism
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttl
 :Christian_Neoplatonism rdf:type owl:NamedIndividual ,
                                  :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlConceptual_Influence
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlConceptual_Influence
 :Conceptual_Influence rdf:type owl:NamedIndividual ,
                                :TypeOfInfleunce ;
                       :description "This involves the adoption or reworking of ideas, theories, or logical structures by a philosopher. It reflects a deep impact on the theoretical content of the philosopher's thinking." .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlConfessions
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlConfessions
 :Confessions rdf:type owl:NamedIndividual ,
                       <http://example.org/ontology/Work> ;
              :hasAuthor :Agostino ;
@@ -398,13 +398,13 @@ xsd:date rdf:type rdfs:Datatype .
              rdfs:comment "Here we used yearOfPublication even tho the book wasn't really published as it was not a common thing to do back in the day." .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlContextual_Reinterpretation
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlContextual_Reinterpretation
 :Contextual_Reinterpretation rdf:type owl:NamedIndividual ,
                                       :TypeOfInfleunce ;
                              :description "Reframing Wittgenstein's ideas in a different cultural, historical, or disciplinary context, often to explore their relevance beyond philosophy; e.g. in education, art, politics or religion." .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlCora_Diamond
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlCora_Diamond
 :Cora_Diamond rdf:type owl:NamedIndividual ,
                        <http://example.org/ontology/Philosopher> ;
               <http://example.org/ontology/authored> :The_Realistic_Spirit ;
@@ -416,12 +416,12 @@ xsd:date rdf:type rdfs:Datatype .
               :placeOfBirth "New York, Usa" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlCritical_Theory
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlCritical_Theory
 :Critical_Theory rdf:type owl:NamedIndividual ,
                           :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlDavid_Hume
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlDavid_Hume
 :David_Hume rdf:type owl:NamedIndividual ,
                      <http://example.org/ontology/Philosopher> ;
             <http://example.org/ontology/authored> :A_Treatise_Of_Human_Nature ;
@@ -433,13 +433,13 @@ xsd:date rdf:type rdfs:Datatype .
             :placeOfDeath "Edinburgh, Scotland" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlEditorial_Transmission
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEditorial_Transmission
 :Editorial_Transmission rdf:type owl:NamedIndividual ,
                                  :TypeOfInfleunce ;
                         :description "The literal or philological transmission of Wittgensetin's texts, notes, manuscripts, or collections. The influence lies in preserving, editing, or publishing his thought, often posthumously, without altering its core content." .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlElizabeth_Anscombe
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlElizabeth_Anscombe
 :Elizabeth_Anscombe rdf:type owl:NamedIndividual ,
                              <http://example.org/ontology/Philosopher> ;
                     <http://example.org/ontology/authored> :Intention ;
@@ -452,38 +452,38 @@ xsd:date rdf:type rdfs:Datatype .
                     :placeOfDeath "Cambridge, England" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlEmpiricism
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEmpiricism
 :Empiricism rdf:type owl:NamedIndividual ,
                      :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlEpistemology
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEpistemology
 :Epistemology rdf:type owl:NamedIndividual ,
                        <http://example.org/ontology/Theme> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlEthics
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEthics
 :Ethics rdf:type owl:NamedIndividual ,
                  <http://example.org/ontology/Theme> .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlExistentialism
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlExistentialism
 :Existentialism rdf:type owl:NamedIndividual ,
                          :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlExtension_To_New_Fields
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlExtension_To_New_Fields
 :Extension_To_New_Fields rdf:type owl:NamedIndividual ,
                                   :TypeOfInfleunce ;
                          :description "Application of Wittgenstein ideas to fields outside traditional philosophy, such as cognitive science, AI, anthropology, or literal theory - expanding his influence across disciplines." .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlFrankfurt_School
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlFrankfurt_School
 :Frankfurt_School rdf:type owl:NamedIndividual ,
                            :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlFriedrich_Nietzsche
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlFriedrich_Nietzsche
 :Friedrich_Nietzsche rdf:type owl:NamedIndividual ,
                               <http://example.org/ontology/Philosopher> ;
                      <http://example.org/ontology/authored> :Thus_Spoke_Zarathustra ;
@@ -496,12 +496,12 @@ xsd:date rdf:type rdfs:Datatype .
                      :placeOfDeath "Weimar, Germany" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlFundamental_Ontology
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlFundamental_Ontology
 :Fundamental_Ontology rdf:type owl:NamedIndividual ,
                                :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlGeorge_Edward_Moore
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGeorge_Edward_Moore
 :George_Edward_Moore rdf:type owl:NamedIndividual ,
                               <http://example.org/ontology/Philosopher> ;
                      <http://example.org/ontology/authored> :A_Defense_Of_Common_Sense ;
@@ -513,12 +513,12 @@ xsd:date rdf:type rdfs:Datatype .
                      :placeOfDeath "Cambridge, England" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlGerman_Idealism
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGerman_Idealism
 :German_Idealism rdf:type owl:NamedIndividual ,
                           :SchoolOfThought .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlGilbert_Ryle
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGilbert_Ryle
 :Gilbert_Ryle rdf:type owl:NamedIndividual ,
                        <http://example.org/ontology/Philosopher> ;
               <http://example.org/ontology/authored> :The_Concept_Of_Mind ;
@@ -531,7 +531,7 @@ xsd:date rdf:type rdfs:Datatype .
               :placeOfDeath "Withby, England" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlGottlob_Frege
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGottlob_Frege
 :Gottlob_Frege rdf:type owl:NamedIndividual ,
                         <http://example.org/ontology/Philosopher> ;
                <http://example.org/ontology/authored> :Begriffsschrift ;
@@ -543,7 +543,7 @@ xsd:date rdf:type rdfs:Datatype .
                :placeOfDeath "Bad Kleinen, Germany" .
 
 
-###  https://github.com/naillgaio/onmtology-Wittgenstein/blob/main/UltimaOntologia.ttlHermeneutics
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlHermeneutics
 :Hermeneutics rdf:type owl:NamedIndividual ,
                        :SchoolOfThought .
 
