@@ -1,0 +1,1308 @@
+@prefix : <https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttl> .
+
+<https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttl> rdf:type owl:Ontology ;
+                                                                                     owl:imports <http://www.semanticweb.org/tommasopieretti/ontologies/2025/4/untitled-ontology-33> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://example.org/ontology/rejectsConcept
+<http://example.org/ontology/rejectsConcept> rdf:type owl:AnnotationProperty ;
+                                             rdfs:domain <http://example.org/ontology/Work> ,
+                                                         :Person .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldescription
+:description rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlxsd:gYear
+:xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/ontology/authored
+<http://example.org/ontology/authored> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                       owl:inverseOf :hasAuthor ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                       rdfs:range <http://example.org/ontology/Work> .
+
+
+###  http://example.org/ontology/disagreesWith
+<http://example.org/ontology/disagreesWith> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:SymmetricProperty ;
+                                            rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                            rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  http://example.org/ontology/hasInfluenced
+<http://example.org/ontology/hasInfluenced> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            owl:inverseOf :isInfluencedBy ;
+                                            rdf:type owl:TransitiveProperty .
+
+
+###  http://example.org/ontology/hasTheme
+<http://example.org/ontology/hasTheme> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/ontology/InfluenceEvent> ;
+                                       rdfs:range <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherInfluencedWork
+:PhilosopherInfluencedWork rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                           owl:inverseOf :WorkWasInfluencedByPhilosopher ;
+                           rdfs:domain <http://example.org/ontology/Philosopher> ;
+                           rdfs:range <http://example.org/ontology/Work> .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherInlfuencedPhilosopher
+:PhilosopherInlfuencedPhilosopher rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                                  owl:inverseOf :PhilosopherWasInfluencedByPhilosopher ;
+                                  rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                  rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherWasInfluencedByPhilosopher
+:PhilosopherWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf :isInfluencedBy ;
+                                       rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                       rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosopherWasInfluencedByWork
+:PhilosopherWasInfluencedByWork rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :PhilosopherWasInfluencedByPhilosopher ;
+                                owl:inverseOf :WorkInfluencedPhilosopher ;
+                                rdfs:domain <http://example.org/ontology/Philosopher> ;
+                                rdfs:range <http://example.org/ontology/Work> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWorkInfluencedPhilosopher
+:WorkInfluencedPhilosopher rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf <http://example.org/ontology/hasInfluenced> ;
+                           rdfs:domain <http://example.org/ontology/Work> ;
+                           rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWorkWasInfluencedByPhilosopher
+:WorkWasInfluencedByPhilosopher rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf :isInfluencedBy ;
+                                rdfs:domain <http://example.org/ontology/Work> ;
+                                rdfs:range <http://example.org/ontology/Philosopher> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlbelongsToSchool
+:belongsToSchool rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://example.org/ontology/Philosopher> ;
+                 rdfs:range :SchoolOfThought .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithTheme
+:dealsWithTheme rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithThemeAsPhilosopher
+:dealsWithThemeAsPhilosopher rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :dealsWithTheme ;
+                             rdfs:domain <http://example.org/ontology/Philosopher> ;
+                             rdfs:range <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithThemeAsSchoolOfThought
+:dealsWithThemeAsSchoolOfThought rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf :dealsWithTheme ;
+                                 rdfs:domain :SchoolOfThought ;
+                                 rdfs:range <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttldealsWithThemeAsWork
+:dealsWithThemeAsWork rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :dealsWithTheme ;
+                      rdfs:domain <http://example.org/ontology/Work> ;
+                      rdfs:range <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain <http://example.org/ontology/Work> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasInfluenceType
+:hasInfluenceType rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasRecipient
+:hasRecipient rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasRecipientWork
+:hasRecipientWork rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasSource
+:hasSource rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasSourceWork
+:hasSourceWork rdf:type owl:ObjectProperty .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlisInfluencedBy
+:isInfluencedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:TransitiveProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/ontology/conceptLabel
+<http://example.org/ontology/conceptLabel> rdf:type owl:DatatypeProperty ;
+                                           rdfs:range xsd:string .
+
+
+###  http://example.org/ontology/dateOfBirth
+<http://example.org/ontology/dateOfBirth> rdf:type owl:DatatypeProperty ,
+                                                   owl:FunctionalProperty ;
+                                          rdfs:range xsd:date .
+
+
+###  http://example.org/ontology/dateOfDeath
+<http://example.org/ontology/dateOfDeath> rdf:type owl:DatatypeProperty ,
+                                                   owl:FunctionalProperty ;
+                                          rdfs:range xsd:date .
+
+
+###  http://example.org/ontology/influenceExplanation
+<http://example.org/ontology/influenceExplanation> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://example.org/ontology/InfluenceEvent> ;
+                                                   rdfs:range xsd:string .
+
+
+###  http://example.org/ontology/themeLabel
+<http://example.org/ontology/themeLabel> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/ontology/Theme> ;
+                                         rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlNationality
+:Nationality rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlbeginningYear
+:beginningYear rdf:type owl:DatatypeProperty ;
+               rdfs:domain <http://example.org/ontology/InfluenceEvent> ;
+               rdfs:range :xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlhasSurname
+:hasSurname rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlinfluenceIntensity
+:influenceIntensity rdf:type owl:DatatypeProperty ;
+                    rdfs:domain <http://example.org/ontology/InfluenceEvent> ;
+                    rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlplaceOfBirth
+:placeOfBirth rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:range xsd:string .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlplaceOfDeath
+:placeOfDeath rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlyearOfPublication
+:yearOfPublication rdf:type owl:DatatypeProperty ;
+                   rdfs:domain <http://example.org/ontology/Work> ;
+                   rdfs:range xsd:date ,
+                              xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/ontology/InfluenceEvent
+<http://example.org/ontology/InfluenceEvent> rdf:type owl:Class ;
+                                             rdfs:subClassOf :Influence .
+
+
+###  http://example.org/ontology/Philosopher
+<http://example.org/ontology/Philosopher> rdf:type owl:Class .
+
+
+###  http://example.org/ontology/Theme
+<http://example.org/ontology/Theme> rdf:type owl:Class .
+
+
+###  http://example.org/ontology/Work
+<http://example.org/ontology/Work> rdf:type owl:Class .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence
+:Influence rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlSchoolOfThought
+:SchoolOfThought rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlTypeOfInfleunce
+:TypeOfInfleunce rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttl
+:A_Defense_Of_Common_Sense rdf:type owl:NamedIndividual ,
+                                    <http://example.org/ontology/Work> ;
+                           :hasAuthor :George_Edward_Moore ;
+                           :yearOfPublication "1925"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlA_Treatise_Of_Human_Nature
+:A_Treatise_Of_Human_Nature rdf:type owl:NamedIndividual ,
+                                     <http://example.org/ontology/Work> ;
+                            :hasAuthor :David_Hume ;
+                            :yearOfPublication "1739"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAesthetic_Philosophy
+:Aesthetic_Philosophy rdf:type owl:NamedIndividual ,
+                               :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAesthetics
+:Aesthetics rdf:type owl:NamedIndividual ,
+                     <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAgostino
+:Agostino rdf:type owl:NamedIndividual ,
+                   <http://example.org/ontology/Philosopher> ;
+          <http://example.org/ontology/authored> :Confessions ;
+          :belongsToSchool :Augustinian_Christian_Theology ,
+                           :Christian_Neoplatonism ,
+                           :Patristic_Philosophy ;
+          <http://example.org/ontology/dateOfBirth> "13-11-0354"^^xsd:date ;
+          <http://example.org/ontology/dateOfDeath> "23-08-0430"^^xsd:date ;
+          :Nationality "Roman" ;
+          :hasSurname "d'Ippona" ;
+          :placeOfBirth "Tagaste, Numidia (nowAlgeria)" ;
+          :placeOfDeath "Hippo, Numidia (now Annaba, Algeria)" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAnalytic_Philosophy
+:Analytic_Philosophy rdf:type owl:NamedIndividual ,
+                              :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAnti_Realism
+:Anti_Realism rdf:type owl:NamedIndividual ,
+                       :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlArthur_Schopenhauer
+:Arthur_Schopenhauer rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Philosopher> ;
+                     <http://example.org/ontology/authored> :The_World_As_Will_And_Representation ;
+                     :belongsToSchool :German_Idealism ;
+                     <http://example.org/ontology/dateOfBirth> "22-02-1788"^^xsd:date ;
+                     <http://example.org/ontology/dateOfDeath> "21-09-1860"^^xsd:date ;
+                     :Nationality "German" ;
+                     :placeOfBirth "Danzig" ;
+                     :placeOfDeath "Frankfurt" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlAugustinian_Christian_Theology
+:Augustinian_Christian_Theology rdf:type owl:NamedIndividual ,
+                                         :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlBegriffsschrift
+:Begriffsschrift rdf:type owl:NamedIndividual ,
+                          <http://example.org/ontology/Work> ;
+                 :hasAuthor :Gottlob_Frege ;
+                 :yearOfPublication "1879"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlBeing_And_Time
+:Being_And_Time rdf:type owl:NamedIndividual ,
+                         <http://example.org/ontology/Work> ;
+                :hasAuthor :Martin_Heidegger ;
+                :yearOfPublication "1927"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlBertrand_Russell
+:Bertrand_Russell rdf:type owl:NamedIndividual ,
+                           <http://example.org/ontology/Philosopher> ;
+                  <http://example.org/ontology/authored> :Principia_Mathematica ;
+                  :belongsToSchool :Analytic_Philosophy ;
+                  <http://example.org/ontology/dateOfBirth> "18-05-1872"^^xsd:date ;
+                  <http://example.org/ontology/dateOfDeath> "02-02-1970"^^xsd:date ;
+                  :Nationality "British" ;
+                  :placeOfBirth "Trellech, Wales" ;
+                  :placeOfDeath "Penrhyndeudraeth, Wales" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttl
+:Christian_Neoplatonism rdf:type owl:NamedIndividual ,
+                                 :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlConceptual_Influence
+:Conceptual_Influence rdf:type owl:NamedIndividual ,
+                               :TypeOfInfleunce ;
+                      :description "This involves the adoption or reworking of ideas, theories, or logical structures by a philosopher. It reflects a deep impact on the theoretical content of the philosopher's thinking." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlConfessions
+:Confessions rdf:type owl:NamedIndividual ,
+                      <http://example.org/ontology/Work> ;
+             :hasAuthor :Agostino ;
+             :yearOfPublication "400"^^:xsd:gYear ;
+             rdfs:comment "Here we used yearOfPublication even tho the book wasn't really published as it was not a common thing to do back in the day." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlContextual_Reinterpretation
+:Contextual_Reinterpretation rdf:type owl:NamedIndividual ,
+                                      :TypeOfInfleunce ;
+                             :description "Reframing Wittgenstein's ideas in a different cultural, historical, or disciplinary context, often to explore their relevance beyond philosophy; e.g. in education, art, politics or religion." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlCora_Diamond
+:Cora_Diamond rdf:type owl:NamedIndividual ,
+                       <http://example.org/ontology/Philosopher> ;
+              <http://example.org/ontology/authored> :The_Realistic_Spirit ;
+              :belongsToSchool :Analytic_Philosophy ,
+                               :Moral_Realism ,
+                               :Wittgensteinian_Ethics ;
+              <http://example.org/ontology/dateOfBirth> "30-10-1937"^^xsd:date ;
+              :Nationality "American" ;
+              :placeOfBirth "New York, Usa" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlCritical_Theory
+:Critical_Theory rdf:type owl:NamedIndividual ,
+                          :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlDavid_Hume
+:David_Hume rdf:type owl:NamedIndividual ,
+                     <http://example.org/ontology/Philosopher> ;
+            <http://example.org/ontology/authored> :A_Treatise_Of_Human_Nature ;
+            :belongsToSchool :Empiricism ;
+            <http://example.org/ontology/dateOfBirth> "07-05-1711"^^xsd:date ;
+            <http://example.org/ontology/dateOfDeath> "25-08-1776"^^xsd:date ;
+            :Nationality "Scottish" ;
+            :placeOfBirth "Edinburgh, Scotland" ;
+            :placeOfDeath "Edinburgh, Scotland" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEditorial_Transmission
+:Editorial_Transmission rdf:type owl:NamedIndividual ,
+                                 :TypeOfInfleunce ;
+                        :description "The literal or philological transmission of Wittgensetin's texts, notes, manuscripts, or collections. The influence lies in preserving, editing, or publishing his thought, often posthumously, without altering its core content." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlElizabeth_Anscombe
+:Elizabeth_Anscombe rdf:type owl:NamedIndividual ,
+                             <http://example.org/ontology/Philosopher> ;
+                    <http://example.org/ontology/authored> :Intention ;
+                    :belongsToSchool :Analytic_Philosophy ,
+                                     :Neo_Aristotelianism ;
+                    <http://example.org/ontology/dateOfBirth> "18-03-1919"^^xsd:date ;
+                    <http://example.org/ontology/dateOfDeath> "05-01-2001"^^xsd:date ;
+                    :Nationality "British" ;
+                    :placeOfBirth "Limerick, Ireland" ;
+                    :placeOfDeath "Cambridge, England" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEmpiricism
+:Empiricism rdf:type owl:NamedIndividual ,
+                     :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEpistemology
+:Epistemology rdf:type owl:NamedIndividual ,
+                       <http://example.org/ontology/Theme> .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlEthics
+:Ethics rdf:type owl:NamedIndividual ,
+                 <http://example.org/ontology/Theme> .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlExistentialism
+:Existentialism rdf:type owl:NamedIndividual ,
+                         :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlExtension_To_New_Fields
+:Extension_To_New_Fields rdf:type owl:NamedIndividual ,
+                                  :TypeOfInfleunce ;
+                         :description "Application of Wittgenstein ideas to fields outside traditional philosophy, such as cognitive science, AI, anthropology, or literal theory - expanding his influence across disciplines." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlFrankfurt_School
+:Frankfurt_School rdf:type owl:NamedIndividual ,
+                           :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlFriedrich_Nietzsche
+:Friedrich_Nietzsche rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Philosopher> ;
+                     <http://example.org/ontology/authored> :Thus_Spoke_Zarathustra ;
+                     :belongsToSchool :Existentialism ,
+                                      :Nihilism ;
+                     <http://example.org/ontology/dateOfBirth> "15-10-1844"^^xsd:date ;
+                     <http://example.org/ontology/dateOfDeath> "25-08-1900"^^xsd:date ;
+                     :Nationality "German" ;
+                     :placeOfBirth "Röcken, Prussia (now Germany)" ;
+                     :placeOfDeath "Weimar, Germany" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlFundamental_Ontology
+:Fundamental_Ontology rdf:type owl:NamedIndividual ,
+                               :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGeorge_Edward_Moore
+:George_Edward_Moore rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Philosopher> ;
+                     <http://example.org/ontology/authored> :A_Defense_Of_Common_Sense ;
+                     :belongsToSchool :Analytic_Philosophy ;
+                     <http://example.org/ontology/dateOfBirth> "04-11-1873"^^xsd:date ;
+                     <http://example.org/ontology/dateOfDeath> "24-10-1958"^^xsd:date ;
+                     :Nationality "British" ;
+                     :placeOfBirth "London, England" ;
+                     :placeOfDeath "Cambridge, England" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGerman_Idealism
+:German_Idealism rdf:type owl:NamedIndividual ,
+                          :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGilbert_Ryle
+:Gilbert_Ryle rdf:type owl:NamedIndividual ,
+                       <http://example.org/ontology/Philosopher> ;
+              <http://example.org/ontology/authored> :The_Concept_Of_Mind ;
+              :belongsToSchool :Analytic_Philosophy ,
+                               :Philosophical_Behaviorism ;
+              <http://example.org/ontology/dateOfBirth> "19-08-1900"^^xsd:date ;
+              <http://example.org/ontology/dateOfDeath> "06-10-1976"^^xsd:date ;
+              :Nationality "British"^^xsd:date ;
+              :placeOfBirth "Brighton, England" ;
+              :placeOfDeath "Withby, England" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlGottlob_Frege
+:Gottlob_Frege rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/authored> :Begriffsschrift ;
+               :belongsToSchool :Analytic_Philosophy ;
+               <http://example.org/ontology/dateOfBirth> "08-11-1848"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "26-07-1925"^^xsd:date ;
+               :Nationality "German" ;
+               :placeOfBirth "Wismar, Germany" ;
+               :placeOfDeath "Bad Kleinen, Germany" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlHermeneutics
+:Hermeneutics rdf:type owl:NamedIndividual ,
+                       :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlHow_To_Do_Things_With_Words
+:How_To_Do_Things_With_Words rdf:type owl:NamedIndividual ,
+                                      <http://example.org/ontology/Work> ;
+                             :hasAuthor :John_Langshaw_Austin ;
+                             :yearOfPublication "1962"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlImmanuel_Kant
+:Immanuel_Kant rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/authored> :The_Critique_Of_Pure_Reason ;
+               :belongsToSchool :Trascendental_Idealism ;
+               <http://example.org/ontology/dateOfBirth> "22-04-1724"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "12-02-1804"^^xsd:date ;
+               :Nationality "Prussian" ;
+               :placeOfBirth "Königsberg, Prussia (now Kaliningrad, Russia)" ;
+               :placeOfDeath "Königsberg, Prussia (now Kaliningrad, Russia)" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Agostino_On_Wittgenstein
+:Influence_Agostino_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                             <http://example.org/ontology/InfluenceEvent> ;
+                                    <http://example.org/ontology/hasTheme> :Philosophy_Of_Language ,
+                                                                           :Philosophy_Of_Mind_Theme ;
+                                    :hasRecipient :Ludwig_Wittgenstein ;
+                                    :hasRecipientWork :Philosophical_Investigations ;
+                                    :hasSource :Agostino ;
+                                    :hasSourceWork :Confessions ;
+                                    <http://example.org/ontology/influenceExplanation> "Agostino influenced Wittgenstein primarly in his reflection on language and language learning. In Philosophical Investigations, Wittgenstein begins by criticizing the Augustinian model of language, in which words function as mere labels for objects. This critique becomes the starting point for his theory of language as a game, where meaning depends on use. Their shared interest in the relationship between language and inner experience also brings them together." ;
+                                    :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Frege_On_Wittgenstein
+:Influence_Frege_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                          <http://example.org/ontology/InfluenceEvent> ;
+                                 <http://example.org/ontology/hasTheme> :Logic ,
+                                                                        :Philosophy_Of_Language ,
+                                                                        :Semantics ;
+                                 :hasRecipient :Ludwig_Wittgenstein ;
+                                 :hasRecipientWork :Tractatus_Logico-Philosophicus ;
+                                 :hasSource :Gottlob_Frege ;
+                                 :hasSourceWork :Begriffsschrift ;
+                                 <http://example.org/ontology/influenceExplanation> "Frege profoundly influenced Wittgenstein in his understanding of logic and linguistic meaning. Frege's distinction between sense and reference paved the way for Wittgenstein's conception of language as a representation of the world. Frege conveyed to Wittgenstein the idea that language must have a rigorous logical structure in order to be meaningful. Wittgenstein's interest in the foundations of mathematics and logic is also in continuity with Frege's thought." ;
+                                 :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Heidegger_On_Wittgenstein
+:Influence_Heidegger_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                              <http://example.org/ontology/InfluenceEvent> ;
+                                     <http://example.org/ontology/hasTheme> :Ontology ,
+                                                                            :Philosophy_Of_Language ;
+                                     :hasRecipient :Ludwig_Wittgenstein ;
+                                     :hasRecipientWork :Philosophical_Investigations ;
+                                     :hasSource :Martin_Heidegger ;
+                                     :hasSourceWork :Being_And_Time ;
+                                     <http://example.org/ontology/influenceExplanation> "Both share a deep focus on language as the foundation of experience and on the limits of rational thought. Heidegger's idea of \"being in the world\" finds an echo in Wittgenstein's notion of life forms. Moreover, the rejection of traditional metaphysics and the interest in the unsaid and silence create an affinity in their approach." ;
+                                     :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Hume_On_Wittgenstein
+:Influence_Hume_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                         <http://example.org/ontology/InfluenceEvent> ;
+                                <http://example.org/ontology/hasTheme> :Epistemology ,
+                                                                       :Philosophy_Of_Mind_Theme ,
+                                                                       :Theory_Of_Knowledge ;
+                                :hasRecipient :Ludwig_Wittgenstein ;
+                                :hasRecipientWork :Philosophical_Investigations ;
+                                :hasSource :David_Hume ;
+                                :hasSourceWork :A_Treatise_Of_Human_Nature ;
+                                <http://example.org/ontology/influenceExplanation> "Hume influenced Wittgenstein primarly in his skeptical attitude and in the analysis of the notion of causality and certainty. Hume argued that our trust in causal connections does not stem from reason, but from habit; Wittgenstein takes up this insight and shows that many of our certainties are not logically founded, but practical. Both share an empiricist approach and a mistrust of traditional metaphysics." ;
+                                :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_James_On_Wittgenstein
+:Influence_James_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                          <http://example.org/ontology/InfluenceEvent> ;
+                                 <http://example.org/ontology/hasTheme> :Philosophical_Psychology ;
+                                 :hasRecipient :Ludwig_Wittgenstein ;
+                                 :hasRecipientWork :Philosophical_Investigations ;
+                                 :hasSource :William_James ;
+                                 :hasSourceWork :Pragmatism_A_New_Name_For_Some_Old_Ways_Of_Thinking ;
+                                 <http://example.org/ontology/influenceExplanation> "James influenced Wittgenstein through pragmatism and the centrality of lived experience. Wittgenstein shares with James the idea that the meaning of a word is determined by its practical use in the context of everyday life. Wittgenstein takes from James the focus on the psychology of language and the ways in which thought is grounded in human practices. Additionally, both are interested in religious and mystical language." ;
+                                 :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Kant_On_Wittgenstein
+:Influence_Kant_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                         <http://example.org/ontology/InfluenceEvent> ;
+                                <http://example.org/ontology/hasTheme> :Epistemology ,
+                                                                       :Metaphysics ,
+                                                                       :Theory_Of_Knowledge ;
+                                :hasRecipient :Ludwig_Wittgenstein ;
+                                :hasRecipientWork :Tractatus_Logico-Philosophicus ;
+                                :hasSource :Immanuel_Kant ;
+                                :hasSourceWork :The_Critique_Of_Pure_Reason ;
+                                <http://example.org/ontology/influenceExplanation> "Kant influenced Wittgenstein, especially in the idea that thought and knowledge have structural limits. Just as Kant distinguishes between phenomenon an noumenon, Wittgenstein distinguishes between what can be said (logically represented) and what can only be shown. Both place epistemic boundaries on philosophy, rejecting metaphysics as cognitive discourse. Kant's approach to the structure of knowledge anticipates Wittgenstein's idea that language conditions thought." ;
+                                :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Moore_On_Wittgenstein
+:Influence_Moore_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                          <http://example.org/ontology/InfluenceEvent> ;
+                                 <http://example.org/ontology/hasTheme> :Epistemology ;
+                                 :hasRecipient :Ludwig_Wittgenstein ;
+                                 :hasRecipientWork :On_Certainty ,
+                                                   :Philosophical_Investigations ;
+                                 :hasSource :George_Edward_Moore ;
+                                 :hasSourceWork :A_Defense_Of_Common_Sense ;
+                                 <http://example.org/ontology/influenceExplanation> "Moore influenced Wittgenstein primarly through his defense of common sense and the idea that some propositions are indubitable. Wittgenstein takes up these ideas to explore the concept of fundamental certainty not as justified knowledge, but as the practical foundation of language and action. Moore encourages him to reflect on the implicit background that makles every doubt or assertion possible." ;
+                                 :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Nietzsche_On_Wittgenstein
+:Influence_Nietzsche_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                              <http://example.org/ontology/InfluenceEvent> ;
+                                     <http://example.org/ontology/hasTheme> :Aesthetics ,
+                                                                            :Ethics ;
+                                     :hasRecipient :Ludwig_Wittgenstein ;
+                                     :hasRecipientWork :Tractatus_Logico-Philosophicus ;
+                                     :hasSource :Friedrich_Nietzsche ;
+                                     :hasSourceWork :Thus_Spoke_Zarathustra ;
+                                     <http://example.org/ontology/influenceExplanation> "Both adopt an aphoristic, critical, and often provocative style, with attention to the form of philosophical discourse. Themes such as the critique of metaphysics, morality as a cultural construct, and mysticism are present in both. Their shared mistrust of abstract philosophical systems brings them closer together." ;
+                                     :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Russell_On_Wittgenstein
+:Influence_Russell_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                            <http://example.org/ontology/InfluenceEvent> ;
+                                   <http://example.org/ontology/hasTheme> :Logic ,
+                                                                          :Ontology ,
+                                                                          :Theory_Of_Knowledge ;
+                                   :hasRecipient :Ludwig_Wittgenstein ;
+                                   :hasRecipientWork :Tractatus_Logico-Philosophicus ;
+                                   :hasSource :Bertrand_Russell ;
+                                   :hasSourceWork :Principia_Mathematica ;
+                                   <http://example.org/ontology/influenceExplanation> "Russell played a fundamental role in Wittgenstein's logical and philosophical development. He transmitted to him an interest in symbolic logic and logical atomism, which became the foundation for the structure of language and the world in Wittgenstein's thought. Russell also influenced Wittgenstein in the method of analyzing philosophical problems: these are tackled through the decomposition into elementary propositions. Although Wittgensteinblater criticizes some aspects of Russell's thought, the initial influence was decisive." ;
+                                   :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Schopenhauer_On_Wittgenstein
+:Influence_Schopenhauer_On_Wittgenstein rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/ontology/InfluenceEvent> ;
+                                        <http://example.org/ontology/hasTheme> :Aesthetics ,
+                                                                               :Ethics ,
+                                                                               :Metaphysics ;
+                                        :hasRecipient :Ludwig_Wittgenstein ;
+                                        :hasRecipientWork :Tractatus_Logico-Philosophicus ;
+                                        :hasSource :Arthur_Schopenhauer ;
+                                        :hasSourceWork :The_World_As_Will_And_Representation ;
+                                        <http://example.org/ontology/influenceExplanation> "Wittgenstein's idea that there exist a reality \"beyond\" what can be expressed linguistically echoes Schopenhauer's distinction between representation and will. Wittgenstein also shares a similar ethical and mystical view with Schopenhauer, in which the value and meaning of life are not found in facts but in what \"shows itself\". The aphoristic style and philosophical conciseness of Schopenhauer are evident in the tone and form used by Wittgenstein." ;
+                                        :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Anscombe
+:Influence_Wittgenstein_On_Anscombe rdf:type owl:NamedIndividual ,
+                                             <http://example.org/ontology/InfluenceEvent> ;
+                                    <http://example.org/ontology/hasTheme> :Ethics ,
+                                                                           :Philosophy_Of_Action ;
+                                    :hasInfluenceType :Editorial_Transmission ;
+                                    :hasRecipient :Elizabeth_Anscombe ;
+                                    :hasRecipientWork :Intention ;
+                                    :hasSource :Ludwig_Wittgenstein ;
+                                    :hasSourceWork :Philosophical_Investigations ;
+                                    <http://example.org/ontology/influenceExplanation> "Anscombe, a direct student and literary executor of Wittgenstein, extended his philosophy of action and applied his methodology to ethics. She translated and edited key works by Wittgenstein, ensuring their faithful transmission. In her book Intention, she developed a philosophy of action that applies Wittgenstein's Critique of Cartesian mentalism" ;
+                                    :beginningYear "1944"^^:xsd:gYear ;
+                                    :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Austin
+:Influence_Wittgenstein_On_Austin rdf:type owl:NamedIndividual ,
+                                           <http://example.org/ontology/InfluenceEvent> ;
+                                  <http://example.org/ontology/hasTheme> :Philosophy_Of_Language ;
+                                  :hasInfluenceType :Thematic_Adoption ;
+                                  :hasRecipient :John_Langshaw_Austin ;
+                                  :hasRecipientWork :How_To_Do_Things_With_Words ;
+                                  :hasSource :Ludwig_Wittgenstein ;
+                                  :hasSourceWork :Philosophical_Investigations ;
+                                  <http://example.org/ontology/influenceExplanation> "Although he developed an indipendent path, Austin shared with Wittgenstein a focus on ordinary language and the multiplicity of linguistic functions. His theory of speech acts, developed in How to Do Things with Words, extends Wittgenstein's insight that language is not only used to describe, but also to perform actions." ;
+                                  :beginningYear "1940"^^:xsd:gYear ;
+                                  :influenceIntensity "Medium" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Cavell
+:Influence_Wittgenstein_On_Cavell rdf:type owl:NamedIndividual ,
+                                           <http://example.org/ontology/InfluenceEvent> ;
+                                  <http://example.org/ontology/hasTheme> :Aesthetics ,
+                                                                         :Epistemology ,
+                                                                         :Ordinary_Language_Philosophy ;
+                                  :hasInfluenceType :Contextual_Reinterpretation ;
+                                  :hasRecipient :Stanley_Cavell ;
+                                  :hasRecipientWork :The_Claim_Of_Reason ;
+                                  :hasSource :Ludwig_Wittgenstein ;
+                                  :hasSourceWork :Philosophical_Investigations ;
+                                  <http://example.org/ontology/influenceExplanation> "Cavell reinterpreted Wittgenstein within American cultural contexts, linking his ideas to skepticism, aesthetics and popular culture. In his book The Claim of Reason, he uses Wittgensteinian concepts such as \"form of life\" to explore the relationship between ordinary language and philosophical skepticism, extending the analysis to films and literature." ;
+                                  :beginningYear "1962"^^:xsd:gYear ;
+                                  :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Diamond
+:Influence_Wittgenstein_On_Diamond rdf:type owl:NamedIndividual ,
+                                            <http://example.org/ontology/InfluenceEvent> ;
+                                   <http://example.org/ontology/hasTheme> :Ethics ,
+                                                                          :Logic ;
+                                   :hasInfluenceType :Systematic_Reinterpretation ;
+                                   :hasRecipient :Cora_Diamond ;
+                                   :hasRecipientWork :The_Realistic_Spirit ;
+                                   :hasSource :Ludwig_Wittgenstein ;
+                                   :hasSourceWork :Tractatus_Logico-Philosophicus ;
+                                   <http://example.org/ontology/influenceExplanation> "Diamond developed the \"resolute reading\" of the Tractatus, arguing that the work should be understood as a therapeutic exercise rather than the presentation of a theory. In her essays collected in The Realistic Spirit, she contends that Wittgenstein aimed to lead the reader to recognize the nonsensical nature of attempts to say what can only be shown." ;
+                                   :beginningYear "1980"^^:xsd:gYear ;
+                                   :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Habermas
+:Influence_Wittgenstein_On_Habermas rdf:type owl:NamedIndividual ,
+                                             <http://example.org/ontology/InfluenceEvent> ;
+                                    <http://example.org/ontology/hasTheme> :Philosophy_Of_Language ,
+                                                                           :Social_Theory ;
+                                    :hasInfluenceType :Thematic_Adoption ;
+                                    :hasRecipient :Jürgen_Habermas ;
+                                    :hasRecipientWork :Theory_Of_Communicative_Action ;
+                                    :hasSource :Ludwig_Wittgenstein ;
+                                    :hasSourceWork :Philosophical_Investigations ;
+                                    <http://example.org/ontology/influenceExplanation> "Habermas integrated Wittgenstein's conception of language as social practice into his theory of communicative action. In works such as The Theory of Communicative Action, he adopted the idea that meaning is determined by social use and that linguistic rules are constitutive of social practices, combining these elements with Frankfurt School critical theory." ;
+                                    :beginningYear "1965"^^:xsd:gYear ;
+                                    :influenceIntensity "Medium" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Kripke
+:Influence_Wittgenstein_On_Kripke rdf:type owl:NamedIndividual ,
+                                           <http://example.org/ontology/InfluenceEvent> ;
+                                  <http://example.org/ontology/hasTheme> :Epistemology ,
+                                                                         :Philosophy_Of_Language ;
+                                  :hasInfluenceType :Systematic_Reinterpretation ;
+                                  :hasRecipient :Saul_Kripke ;
+                                  :hasRecipientWork :Wittgenstein_On_Rules_And_Private_Language ;
+                                  :hasSource :Ludwig_Wittgenstein ;
+                                  :hasSourceWork :Philosophical_Investigations ;
+                                  <http://example.org/ontology/influenceExplanation> "Kripke systematically reinterpreted Wittgenstein's problem of following a rule as a skeptical paradox and a skeptical solution. His interpretation in \"Wittgenstein on Rules and Private Language\" introduced a new approach to linguistic rules which, although controversial among Wittgenstein scholars, has had a profound influence on the philosophy of language." ;
+                                  :beginningYear "1970"^^:xsd:gYear ;
+                                  :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_McDowell
+:Influence_Wittgenstein_On_McDowell rdf:type owl:NamedIndividual ,
+                                             <http://example.org/ontology/InfluenceEvent> ;
+                                    <http://example.org/ontology/hasTheme> :Epistemology ,
+                                                                           :Philosophy_Of_Mind_Theme ;
+                                    :hasInfluenceType :Theoretical_Extension ;
+                                    :hasRecipient :John_McDowell ;
+                                    :hasRecipientWork :Mind_And_World ;
+                                    :hasSource :Ludwig_Wittgenstein ;
+                                    :hasSourceWork :Philosophical_Investigations ;
+                                    <http://example.org/ontology/influenceExplanation> "McDowell extended Wittgensteinian philosophy by combining it with Hegelian and Kantian elements to develop a non-dualistic view of mind and world. In Mind and World, he draws on Wittgenstein's anti-reductionism and his critiques of the \"myth of the given\" to develop an account of perception that avoids both idealism and naive empiricism." ;
+                                    :beginningYear "1975"^^:xsd:gYear ;
+                                    :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Rorty
+:Influence_Wittgenstein_On_Rorty rdf:type owl:NamedIndividual ,
+                                          <http://example.org/ontology/InfluenceEvent> ;
+                                 <http://example.org/ontology/hasTheme> :Epistemology ;
+                                 :hasInfluenceType :Synthesis_With_Other_Theories ;
+                                 :hasRecipient :Richard_Rorty ;
+                                 :hasRecipientWork :Philosophy_And_The_Mirror_Of_Nature ;
+                                 :hasSource :Ludwig_Wittgenstein ;
+                                 :hasSourceWork :Philosophical_Investigations ,
+                                                :Remarks_On_The_Foundations_Of_Mathematics ;
+                                 <http://example.org/ontology/influenceExplanation> "Rorty integrated elements of Wittgenstein's linguistic critique with American pragmatism and postmodern thought. In Philosophy and the Mirror of Nature, he uses Wittgenstein's crtique of private language to attack foundationalist epistemology and promote an anti-representationalist view of knowledge." ;
+                                 :beginningYear "1965"^^:xsd:gYear ;
+                                 :influenceIntensity "Medium" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Ryle
+:Influence_Wittgenstein_On_Ryle rdf:type owl:NamedIndividual ,
+                                         <http://example.org/ontology/InfluenceEvent> ;
+                                <http://example.org/ontology/hasTheme> :Philosophy_Of_Mind_Theme ;
+                                :hasInfluenceType :Method_Adoption ;
+                                :hasRecipient :Gilbert_Ryle ;
+                                :hasRecipientWork :The_Concept_Of_Mind ;
+                                :hasSource :Ludwig_Wittgenstein ;
+                                :hasSourceWork :The_Blue_And_Brown_Books ;
+                                <http://example.org/ontology/influenceExplanation> "Ryle adopted the Wittgensteinian therapeutic approach to dismantle Cartesian mind-body dualism. In his book The Concept of Mind, he employs ordinary language analysis and the notion of a \"category mistake\" to critique the view of the mind as a \"ghost in the machine\", showing how traditional philosophical problems arise from linguistic confusions." ;
+                                :beginningYear "1929"^^:xsd:gYear ;
+                                :influenceIntensity "Medium" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlInfluence_Wittgenstein_On_Winch
+:Influence_Wittgenstein_On_Winch rdf:type owl:NamedIndividual ,
+                                          <http://example.org/ontology/InfluenceEvent> ;
+                                 <http://example.org/ontology/hasTheme> :Philosophy_Of_Social_Science ;
+                                 :hasInfluenceType :Extension_To_New_Fields ;
+                                 :hasRecipient :Peter_Winch ;
+                                 :hasRecipientWork :The_Idea_Of_A_Social_Science ;
+                                 :hasSource :Ludwig_Wittgenstein ;
+                                 :hasSourceWork :Philosophical_Investigations ;
+                                 <http://example.org/ontology/influenceExplanation> "Winch extended Wittgenstein's ideas of \"language games\" and \"forms of life\" to anthropology and the social sciences. In his book The Idea of a Social Science, he argues that understanding different social practices requires understanding their systems of linguistic rules, thereby applying Wittgenstein to the methodology of the social sciences and to cultural relativism." ;
+                                 :beginningYear "1955"^^:xsd:gYear ;
+                                 :influenceIntensity "High" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlIntention
+:Intention rdf:type owl:NamedIndividual ,
+                    <http://example.org/ontology/Work> ;
+           :hasAuthor :Elizabeth_Anscombe ;
+           :yearOfPublication "1957"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlJohn_Langshaw_Austin
+:John_Langshaw_Austin rdf:type owl:NamedIndividual ,
+                               <http://example.org/ontology/Philosopher> ;
+                      <http://example.org/ontology/authored> :How_To_Do_Things_With_Words ;
+                      :belongsToSchool :Analytic_Philosophy ,
+                                       :Ordinary_Language_Philosophy ;
+                      <http://example.org/ontology/dateOfBirth> "26-03-1911"^^xsd:date ;
+                      <http://example.org/ontology/dateOfDeath> "08-02-1960"^^xsd:date ;
+                      :Nationality "British" ;
+                      :placeOfBirth "Lancaster, England" ;
+                      :placeOfDeath "Oxford, England" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlJohn_McDowell
+:John_McDowell rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/authored> :Mind_And_World ;
+               :belongsToSchool :Analytic_Philosophy ,
+                                :Neo_Hegelianism ,
+                                :Philosophy_Of_Mind ;
+               <http://example.org/ontology/dateOfBirth> "07-03-1942"^^xsd:date ;
+               :Nationality "South African" ;
+               :placeOfBirth "Boksburg, South Africa" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlJürgen_Habermas
+:Jürgen_Habermas rdf:type owl:NamedIndividual ,
+                          <http://example.org/ontology/Philosopher> ;
+                 <http://example.org/ontology/authored> :Theory_Of_Communicative_Action ;
+                 :belongsToSchool :Critical_Theory ,
+                                  :Frankfurt_School ;
+                 <http://example.org/ontology/dateOfBirth> "18-06-1929"^^xsd:date ;
+                 :Nationality "German" ;
+                 :placeOfBirth "Düsseldorf, Germany" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlLinguistic_Influence
+:Linguistic_Influence rdf:type owl:NamedIndividual ,
+                               :TypeOfInfleunce ;
+                      :description "This Relates to the conception and function of language, or the use of specific terminology. It may involve adopting or challenging prior views on language." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlLogic
+:Logic rdf:type owl:NamedIndividual ,
+                <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlLudwig_Wittgenstein
+:Ludwig_Wittgenstein rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Philosopher> ;
+                     <http://example.org/ontology/authored> :On_Certainty ,
+                                                            :Philosophical_Investigations ,
+                                                            :Remarks_On_The_Foundations_Of_Mathematics ,
+                                                            :The_Blue_And_Brown_Books ,
+                                                            :Tractatus_Logico-Philosophicus ;
+                     <http://example.org/ontology/dateOfBirth> "26-04-1889"^^xsd:date ;
+                     <http://example.org/ontology/dateOfDeath> "29-04-1951"^^xsd:date ;
+                     :Nationality "Austrian (later British citizen)" ;
+                     :placeOfBirth "Vienna, Austria" ;
+                     :placeOfDeath "Cambridge, England" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlMartin_Heidegger
+:Martin_Heidegger rdf:type owl:NamedIndividual ,
+                           <http://example.org/ontology/Philosopher> ;
+                  <http://example.org/ontology/authored> :Being_And_Time ;
+                  :belongsToSchool :Fundamental_Ontology ,
+                                   :Phenomenology ,
+                                   :Philosophical_Hermeneutics ;
+                  <http://example.org/ontology/dateOfBirth> "26-09-1889"^^xsd:date ;
+                  <http://example.org/ontology/dateOfDeath> "26-05-1976"^^xsd:date ;
+                  :Nationality "German" ;
+                  :placeOfBirth "Messkirch, Germany" ;
+                  :placeOfDeath "Freiburg im Breisgau, Germany" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlMetaphysical_Realism
+:Metaphysical_Realism rdf:type owl:NamedIndividual ,
+                               :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlMetaphysics
+:Metaphysics rdf:type owl:NamedIndividual ,
+                      <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlMethod_Adoption
+:Method_Adoption rdf:type owl:NamedIndividual ,
+                          :TypeOfInfleunce ;
+                 :description "The adoption of specific methods characteristic of Wittgenstein's approach, such as linguistic analysis, the use of ordinary language examples, or his \"therapeutic\" method of dissolving philosophical problems." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlMethodological_Influence
+:Methodological_Influence rdf:type owl:NamedIndividual ,
+                                   :TypeOfInfleunce ;
+                          :description "This concerns the adoption of philosophical approaches or strategies, such as logical analysis or everyday examples. It shapes how a philosopher formulates and adresses problems." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlMind_And_World
+:Mind_And_World rdf:type owl:NamedIndividual ,
+                         <http://example.org/ontology/Work> ;
+                :hasAuthor :John_McDowell ;
+                :yearOfPublication "1994"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlMoral_Realism
+:Moral_Realism rdf:type owl:NamedIndividual ,
+                        :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlNeo_Aristotelianism
+:Neo_Aristotelianism rdf:type owl:NamedIndividual ,
+                              :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlNeo_Hegelianism
+:Neo_Hegelianism rdf:type owl:NamedIndividual ,
+                          :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlNihilism
+:Nihilism rdf:type owl:NamedIndividual ,
+                   :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlOn_Certainty
+:On_Certainty rdf:type owl:NamedIndividual ,
+                       <http://example.org/ontology/Work> ;
+              :hasAuthor :Ludwig_Wittgenstein ;
+              :yearOfPublication "1969"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlOntology
+:Ontology rdf:type owl:NamedIndividual ,
+                   <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlOrdinary_Language_Philosophy
+:Ordinary_Language_Philosophy rdf:type owl:NamedIndividual ,
+                                       <http://example.org/ontology/Theme> ,
+                                       :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPatristic_Philosophy
+:Patristic_Philosophy rdf:type owl:NamedIndividual ,
+                               :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPeter_Winch
+:Peter_Winch rdf:type owl:NamedIndividual ,
+                      <http://example.org/ontology/Philosopher> ;
+             <http://example.org/ontology/authored> :The_Idea_Of_A_Social_Science ;
+             :belongsToSchool :Analytic_Philosophy ,
+                              :Philosophy_Of_Social_Science ,
+                              :Wittgensteinian_Hermeneutics ;
+             <http://example.org/ontology/dateOfBirth> "14-01-1926"^^xsd:date ;
+             <http://example.org/ontology/dateOfDeath> "27-04-1997"^^xsd:date ;
+             :Nationality "British" ;
+             :placeOfBirth "London, England" ;
+             :placeOfDeath "Champaign, Illinois, USA" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhenomenology
+:Phenomenology rdf:type owl:NamedIndividual ,
+                        :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophical_Behaviorism
+:Philosophical_Behaviorism rdf:type owl:NamedIndividual ,
+                                    :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophical_Hermeneutics
+:Philosophical_Hermeneutics rdf:type owl:NamedIndividual ,
+                                     :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophical_Investigations
+:Philosophical_Investigations rdf:type owl:NamedIndividual ,
+                                       <http://example.org/ontology/Work> ;
+                              :hasAuthor :Ludwig_Wittgenstein ;
+                              :yearOfPublication "1953"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophical_Psychology
+:Philosophical_Psychology rdf:type owl:NamedIndividual ,
+                                   <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophy_And_The_Mirror_Of_Nature
+:Philosophy_And_The_Mirror_Of_Nature rdf:type owl:NamedIndividual ,
+                                              <http://example.org/ontology/Work> ;
+                                     :hasAuthor :Richard_Rorty ;
+                                     :yearOfPublication "1979"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophy_Of_Action
+:Philosophy_Of_Action rdf:type owl:NamedIndividual ,
+                               <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophy_Of_Language
+:Philosophy_Of_Language rdf:type owl:NamedIndividual ,
+                                 <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophy_Of_Mind
+:Philosophy_Of_Mind rdf:type owl:NamedIndividual ,
+                             :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophy_Of_Mind_Theme
+:Philosophy_Of_Mind_Theme rdf:type owl:NamedIndividual ,
+                                   <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPhilosophy_Of_Social_Science
+:Philosophy_Of_Social_Science rdf:type owl:NamedIndividual ,
+                                       <http://example.org/ontology/Theme> ,
+                                       :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPostmodernism
+:Postmodernism rdf:type owl:NamedIndividual ,
+                        :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPragmatism
+:Pragmatism rdf:type owl:NamedIndividual ,
+                     :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPragmatism_A_New_Name_For_Some_Old_Ways_Of_Thinking
+:Pragmatism_A_New_Name_For_Some_Old_Ways_Of_Thinking rdf:type owl:NamedIndividual ,
+                                                              <http://example.org/ontology/Work> ;
+                                                     :hasAuthor :William_James ;
+                                                     :yearOfPublication "1907"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlPrincipia_Mathematica
+:Principia_Mathematica rdf:type owl:NamedIndividual ,
+                                <http://example.org/ontology/Work> ;
+                       :hasAuthor :Bertrand_Russell ;
+                       :yearOfPublication "1910"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlRemarks_On_The_Foundations_Of_Mathematics
+:Remarks_On_The_Foundations_Of_Mathematics rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/ontology/Work> ;
+                                           :hasAuthor :Ludwig_Wittgenstein ;
+                                           :yearOfPublication "1956"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlRichard_Rorty
+:Richard_Rorty rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/authored> :Philosophy_And_The_Mirror_Of_Nature ;
+               :belongsToSchool :Anti_Realism ,
+                                :Postmodernism ,
+                                :Pragmatism ;
+               <http://example.org/ontology/dateOfBirth> "04-10-1931"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "08-06-2007"^^xsd:date ;
+               :Nationality "American" ;
+               :placeOfBirth "New York, New York, USA" ;
+               :placeOfDeath "Palo Alto, California, USA" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlSaul_Kripke
+:Saul_Kripke rdf:type owl:NamedIndividual ,
+                      <http://example.org/ontology/Philosopher> ;
+             <http://example.org/ontology/authored> :Wittgenstein_On_Rules_And_Private_Language ;
+             :belongsToSchool :Analytic_Philosophy ,
+                              :Metaphysical_Realism ;
+             <http://example.org/ontology/dateOfBirth> "13-11-1940"^^xsd:date ;
+             <http://example.org/ontology/dateOfDeath> "15-09-2022"^^xsd:date ;
+             :Nationality "American" ;
+             :placeOfBirth "Bay Shore, New York, USA" ;
+             :placeOfDeath "Plainsboro, New Jersey, USA" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlSemantics
+:Semantics rdf:type owl:NamedIndividual ,
+                    <http://example.org/ontology/Theme> .
+
+
+### https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlSocial_Theory
+:Social_Theory rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlStanley_Cavell
+:Stanley_Cavell rdf:type owl:NamedIndividual ,
+                         <http://example.org/ontology/Philosopher> ;
+                <http://example.org/ontology/authored> :The_Claim_Of_Reason ;
+                :belongsToSchool :Aesthetic_Philosophy ,
+                                 :Analytic_Philosophy ,
+                                 :Hermeneutics ;
+                <http://example.org/ontology/dateOfBirth> "01-09-1926"^^xsd:date ;
+                <http://example.org/ontology/dateOfDeath> "19-06-2018"^^xsd:date ;
+                :Nationality "American" ;
+                :placeOfBirth "Atlanta, Georgia, USA" ;
+                :placeOfDeath "Boston, Massachusetts, USA" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlStylistic_Influence
+:Stylistic_Influence rdf:type owl:NamedIndividual ,
+                              :TypeOfInfleunce ;
+                     :description "This concerns the mode of presentation: tone, structure, use of aphorims or dialogue. It affects the literary style and the form of philosophical writing." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlSynthesis_With_Other_Theories
+:Synthesis_With_Other_Theories rdf:type owl:NamedIndividual ,
+                                        :TypeOfInfleunce ;
+                               :description "Combining Wittgenstein's philosophy with other major frameworks (e.g. phenomenology, pragmatism, structuralism), creating hybrid approaches or comparative analyses." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlSystematic_Reinterpretation
+:Systematic_Reinterpretation rdf:type owl:NamedIndividual ,
+                                      :TypeOfInfleunce ;
+                             :description "A reinterpretation of Wittgenstein's entire philosophical framework from a different or updated perspective, reorganizing key concepts to fit new theoretical contexts or respond to contemporary philosophical issues." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThe_Blue_And_Brown_Books
+:The_Blue_And_Brown_Books rdf:type owl:NamedIndividual ,
+                                   <http://example.org/ontology/Work> ;
+                          :hasAuthor :Ludwig_Wittgenstein ;
+                          :yearOfPublication "1958"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThe_Claim_Of_Reason
+:The_Claim_Of_Reason rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Work> ;
+                     :hasAuthor :Stanley_Cavell ;
+                     :yearOfPublication "1979"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThe_Concept_Of_Mind
+:The_Concept_Of_Mind rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Work> ;
+                     :hasAuthor :Gilbert_Ryle ;
+                     :yearOfPublication "1949"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThe_Critique_Of_Pure_Reason
+:The_Critique_Of_Pure_Reason rdf:type owl:NamedIndividual ,
+                                      <http://example.org/ontology/Work> ;
+                             :hasAuthor :Immanuel_Kant ;
+                             :yearOfPublication "1781"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThe_Idea_Of_A_Social_Science
+:The_Idea_Of_A_Social_Science rdf:type owl:NamedIndividual ,
+                                       <http://example.org/ontology/Work> ;
+                              :hasAuthor :Peter_Winch ;
+                              :yearOfPublication "1958"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThe_Realistic_Spirit
+:The_Realistic_Spirit rdf:type owl:NamedIndividual ,
+                               <http://example.org/ontology/Work> ;
+                      :hasAuthor :Cora_Diamond ;
+                      :yearOfPublication "1991"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThe_World_As_Will_And_Representation
+:The_World_As_Will_And_Representation rdf:type owl:NamedIndividual ,
+                                               <http://example.org/ontology/Work> ;
+                                      :hasAuthor :Arthur_Schopenhauer ;
+                                      :yearOfPublication "1818"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThematic_Adoption
+:Thematic_Adoption rdf:type owl:NamedIndividual ,
+                            :TypeOfInfleunce ;
+                   :description "Selective integration of themes from Wittgenstein's work without necessarily adopting his methodology or broader philosophical stance." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThematic_Influence
+:Thematic_Influence rdf:type owl:NamedIndividual ,
+                             :TypeOfInfleunce ;
+                    :description "This appaers in the selection of core topics and questions (e.g. ethics, metaphysics, language). It indicates a shared interest in certain issues, even without agreeing on solutions." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlTheoretical_Extension
+:Theoretical_Extension rdf:type owl:NamedIndividual ,
+                                :TypeOfInfleunce ;
+                       :description "Development of new theoretical insights that build on Wittgenstein'sideas - going beyond what he explicitly wrote, while remaining consistent with his core philosophical vision." .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlTheory_Of_Communicative_Action
+:Theory_Of_Communicative_Action rdf:type owl:NamedIndividual ,
+                                         <http://example.org/ontology/Work> ;
+                                :hasAuthor :Jürgen_Habermas ;
+                                :yearOfPublication "1981"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlTheory_Of_Knowledge
+:Theory_Of_Knowledge rdf:type owl:NamedIndividual ,
+                              <http://example.org/ontology/Theme> .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlThus_Spoke_Zarathustra
+:Thus_Spoke_Zarathustra rdf:type owl:NamedIndividual ,
+                                 <http://example.org/ontology/Work> ;
+                        :hasAuthor :Friedrich_Nietzsche ;
+                        :yearOfPublication "1883"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlTractatus_Logico-Philosophicus
+:Tractatus_Logico-Philosophicus rdf:type owl:NamedIndividual ,
+                                         <http://example.org/ontology/Work> ;
+                                :hasAuthor :Ludwig_Wittgenstein ;
+                                :yearOfPublication "1921"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlTrascendental_Idealism
+:Trascendental_Idealism rdf:type owl:NamedIndividual ,
+                                 :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWilliam_James
+:William_James rdf:type owl:NamedIndividual ,
+                        <http://example.org/ontology/Philosopher> ;
+               <http://example.org/ontology/authored> :Pragmatism_A_New_Name_For_Some_Old_Ways_Of_Thinking ;
+               :belongsToSchool :Pragmatism ;
+               <http://example.org/ontology/dateOfBirth> "11-01-1842"^^xsd:date ;
+               <http://example.org/ontology/dateOfDeath> "26-08-1910"^^xsd:date ;
+               :Nationality "American" ;
+               :placeOfBirth "New York, New York, USA" ;
+               :placeOfDeath "Chocorua, New Hampshire, USA" .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWittgenstein_On_Rules_And_Private_Language
+:Wittgenstein_On_Rules_And_Private_Language rdf:type owl:NamedIndividual ,
+                                                     <http://example.org/ontology/Work> ;
+                                            :hasAuthor :Saul_Kripke ;
+                                            :yearOfPublication "1982"^^:xsd:gYear .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWittgensteinian_Ethics
+:Wittgensteinian_Ethics rdf:type owl:NamedIndividual ,
+                                 :SchoolOfThought .
+
+
+###  https://raw.githubusercontent.com/naillgaio/onmtology-Wittgenstein/refs/heads/main/UltimaOntologia4%20copia.ttlWittgensteinian_Hermeneutics
+:Wittgensteinian_Hermeneutics rdf:type owl:NamedIndividual ,
+                                       :SchoolOfThought .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
